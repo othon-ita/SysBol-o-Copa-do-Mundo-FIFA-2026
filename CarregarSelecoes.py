@@ -48,11 +48,27 @@ def carregarSelecoes():
             print("Erro: número incorreto de seleções participantes! Carregamento de seleções cancelado.")
             dicionarioSelecoes.clear()
 
-    return dicionarioSelecoes, ok
 
+    partidas = []
+    id_partida = 0
 
-
-
+    #Combinação de partidas de cada grupo
+    for chaves, valores in dicionarioSelecoes.items():
+        for i in range(len(valores)):
+            for j in range(i+1, len(valores)):
+                id_partida += 1
+                dicionarioPartida = {
+                    "id": id_partida,
+                    "fase": 1,
+                    "grupo": chaves,
+                    "selecao1": valores[i],
+                    "selecao2": valores[j],
+                    "gols1": -1,
+                    "gols2": -1
+                }
+                partidas.append(dicionarioPartida)
+    
+    return dicionarioSelecoes, ok, partidas
 
 
 
