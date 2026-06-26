@@ -72,3 +72,36 @@ def cadastrar ():
                 sleep (2)
 def limpar():
     os.system ('cls')
+def registrar(escolha2):
+    lista = []
+    if escolha2 == 1:
+        nome = input('Digite o seu nome:\n')
+        escolha3 = int (input('''--------------------------------------------
+[1] listar todos os jogos do bolão
+[2] listar apenas jogos sem palpite
+[3] cadastrar ou alterar o placar de um jogo
+ '''))
+        with open (f'palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
+                    leitura = json.load(arquivo)
+        match escolha3:
+            case 1:
+                for i in leitura:
+                    print(f'{i}\n')
+                espera = input ()
+            case 2:
+                for i in leitura:
+                    if i.get('gols1') == -1 and i.get('gols1') == -1:
+                        print (f'{i}\n')
+                espera = input()
+            case 3:
+                escolha4 = int(input('--------------------------------------------\nqual id do jogo que desejar cadastrar ou alterar o placar:'))
+                for i in leitura:
+                    if i.get('id') == escolha4:
+                        print(i)
+                gols1 = int(input('digite a quantidade de gols para primeira selecao:'))
+                gols2 = int(input('digite a quantidade de gols para segunda selecao:'))
+                for i in leitura:
+                    if i.get ('id') == escolha4:
+                        i.update({'gols1': gols1, 'gols2' : gols2})
+                with open (f'palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
+                    json.dump(leitura, arquivo, indent = 4)
