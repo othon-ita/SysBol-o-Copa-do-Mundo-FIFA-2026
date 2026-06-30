@@ -16,7 +16,6 @@ def cadastrar_gabarito():
         partida["gols1"] = int(input())
         print(f"Digite a quantidade de gols da primeira seleção: ({partida["selecao2"]})")
         partida["gols2"] = int(input())
-        soma+= 1
 
     with open("gabarito.json", "w", encoding="utf-8") as arquivo:
         json.dump(partidas, arquivo, indent=4, ensure_ascii=False)
