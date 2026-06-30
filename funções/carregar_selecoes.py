@@ -91,7 +91,7 @@ def carregarSelecoes():
 
 
     #Cria um arquivo gabarito.json com as partidas da primeira fase
-    with open("gabarito.json", "w", encoding="utf-8") as arquivo:
+    with open("./jogos/gabarito.json", "w", encoding="utf-8") as arquivo:
         json.dump(partidas, arquivo, indent=4, ensure_ascii=False)
 
     return dicionarioSelecoes, ok, partidas

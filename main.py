@@ -1,6 +1,8 @@
 from funções.cadastrar_apostador import cadastrar
 from funções.limpar import limpar
 from funções.carregar_selecoes import carregarSelecoes
+from funções.cadastrar_palpites import cadastrar_palpites
+from funções.preencher_aleat import preencher_aleatoriamente
 
 while True:
     limpar()
@@ -23,7 +25,11 @@ while True:
     
     if escolha == 1:
         carregarSelecoes()
-    if escolha == 2:
+    elif escolha == 2:
         cadastrar()
-    if escolha == 0:
+    elif escolha == 3:
+        cadastrar_palpites()
+    elif escolha == 4:
+        preencher_aleatoriamente()
+    elif escolha == 10:
         break
