@@ -59,7 +59,7 @@ def cadastrar_palpites():
                     if i.get ('id') == escolha4:
                         i.update({'gols1': gols1, 'gols2' : gols2})
 
-                with open (f'./apostadorespalpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
+                with open (f'./apostadores/palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
                     json.dump(leitura, arquivo, indent = 4)
             case 0 : 
                 break
