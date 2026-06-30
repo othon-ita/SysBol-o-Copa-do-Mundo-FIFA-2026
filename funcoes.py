@@ -31,8 +31,8 @@ def cadastrar ():
                 "id": i + 1,
                 "fase": 1,
                 "grupo": gruposLetras[contador],
-                "selecao1": " ",
-                "selecao2": " ",
+                "selecao1": "",
+                "selecao2": "",
                 "gols1": -1, 
                 "gols2": -1
                 }
@@ -65,8 +65,8 @@ def cadastrar ():
                 dados = {
                 "id": id ,
                 "fase": fase,
-                "selecao1": " ",
-                "selecao2": " ",
+                "selecao1": "",
+                "selecao2": "",
                 "gols1": -1, 
                 "gols2": -1
                 }
@@ -91,12 +91,12 @@ def registrar(escolha2, partidas):
     nome = input('Digite o seu nome:\n')
     with open (f'palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
                     leitura = json.load(arquivo)
-    if  leitura[71]['selecao1'].strip() is None and leitura[71]['selecao2'].strip() is None:
+    if (not leitura[71].get('selecao1')) or (not leitura[71].get('selecao2')):
         try:
-            for i in leitura:
-                status = True
+            for i in leitura:   
                 for j in partidas:
                     if not status:
+                        status = True
                         break
                     if (i.get('id') == j.get('id')):
                         status = False
@@ -107,8 +107,6 @@ def registrar(escolha2, partidas):
             print('ops! voce esqueceu de carregar as selecoes, volte aqui mais tarde ;)')
             sleep(2)
             return
-    
-
         
         
     if escolha2 == 1:
@@ -120,7 +118,7 @@ def registrar(escolha2, partidas):
 [2] listar apenas jogos sem palpite
 [3] cadastrar ou alterar o placar de um jogo
 [0] sair
-    '''))
+'''))
 
             match escolha3:
                 case 1:
