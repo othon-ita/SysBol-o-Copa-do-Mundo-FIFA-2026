@@ -13,7 +13,7 @@ def cadastrar ():
     with open ('./apostadores/apostadores.txt', 'r') as arquivo:
         leitura = arquivo.read()
         if nome in leitura:
-            print('Esse nome ja esta cadastrado')
+            print('Esse nome ja esta cadastrado!')
             sleep (2)
         else:
             lista = []
@@ -70,5 +70,5 @@ def cadastrar ():
                 arquivo.write(f'{nome}\n')     
             with open (f'./apostadores/palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
                 json.dump(lista, arquivo, indent = 4)
-                print ('cadastrado com sucesso!')
+                print ('Cadastrado com sucesso!')
                 sleep (2)

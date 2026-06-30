@@ -52,8 +52,8 @@ def cadastrar_palpites():
                 for i in leitura:
                     if i.get('id') == escolha4:
                         print(i)
-                gols1 = int(input('digite a quantidade de gols para primeira selecao:'))
-                gols2 = int(input('digite a quantidade de gols para segunda selecao:'))
+                gols1 = int(input('Digite a quantidade de gols para primeira selecao:'))
+                gols2 = int(input('Digite a quantidade de gols para segunda selecao:'))
 
                 for i in leitura:
                     if i.get ('id') == escolha4:
