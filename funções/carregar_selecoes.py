@@ -1,3 +1,5 @@
+import json
+
 def carregarSelecoes():
     """
     Carrega seleções a partir de um arquivo selecoes.txt, agrupando-as de quatro em quatro nos grupos A até L com base nos critérios:
@@ -87,6 +89,9 @@ def carregarSelecoes():
                 }
                 partidas.append(dicionarioPartida)
 
+
+    #Cria um arquivo gabarito.json com as partidas da primeira fase
+    with open("gabarito.json", "w", encoding="utf-8") as arquivo:
+        json.dump(partidas, arquivo, indent=4, ensure_ascii=False)
+
     return dicionarioSelecoes, ok, partidas
-
-
