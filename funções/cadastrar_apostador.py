@@ -4,7 +4,7 @@ def cadastrar ():
     grupos = {1 : 'A', 2: 'B', 3 : 'C', 4 : 'D', 5: 'E', 6: 'F', 7: 'G', 8 : 'H', 9 : 'I', 10 : 'J', 11 : 'K', 12: 'L' }
     nome = input('''------Digite o seu nome:''')
     
-    with open ('apostadores.txt', 'r') as arquivo:
+    with open ('./apostadores/apostadores.txt', 'r') as arquivo:
         leitura = arquivo.read()
         if nome in leitura:
             print('Esse nome ja esta cadastrado')
@@ -60,9 +60,9 @@ def cadastrar ():
                 }
                 lista.append(dados)
                 
-            with open ('apostadores.txt', 'a') as arquivo:
+            with open ('./apostadores/apostadores.txt', 'a') as arquivo:
                 arquivo.write(f'{nome}\n')     
-            with open (f'palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
+            with open (f'./apostadores/palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
                 json.dump(lista, arquivo, indent = 4)
                 print ('cadastrado com sucesso!')
                 sleep (2)
