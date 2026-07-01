@@ -7,7 +7,7 @@ def cadastrar_palpites():
         with open ('./jogos/gabarito.json', 'r', encoding = 'utf-8') as arquivo:
             partidas = json.load(arquivo)
     except: 
-        print('Ops! Você esqueceu de carregar as selecoes. Volte aqui mais tarde!!')
+        print('Ops! Você esqueceu de carregar as seleções. Volte aqui mais tarde!')
         sleep(5)
         return
     

@@ -3,6 +3,7 @@ from funções.limpar import limpar
 from funções.carregar_selecoes import carregarSelecoes
 from funções.cadastrar_palpites import cadastrar_palpites
 from funções.preencher_aleat import preencher_aleatoriamente
+from funções.consultar_dados import consultar_dados
 
 while True:
     limpar()
@@ -31,5 +32,7 @@ Digite a opção desejada: '''
         cadastrar_palpites()
     elif escolha == 4:
         preencher_aleatoriamente()
+    elif escolha == 9:
+        consultar_dados()
     elif escolha == 10:
         break
