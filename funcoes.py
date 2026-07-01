@@ -84,9 +84,7 @@ def limpar():
    alterar ou cadastrar, o outro modo é o em lote... (volte aqui para adicionar mais)"""
 
 
-def registrar(escolha2, partidas):
-    lista = []
-    jogos = []
+def registrar(partidas):
     status = True
     nome = input('Digite o seu nome:\n')
     with open (f'palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
@@ -109,15 +107,15 @@ def registrar(escolha2, partidas):
             return
         
         
-    if escolha2 == 1:
+    
 
-        while True:
+    while True:
             limpar()
             escolha3 = int (input('''--------------------------------------------
 [1] listar todos os jogos do bolão
 [2] listar apenas jogos sem palpite
 [3] cadastrar ou alterar o placar de um jogo
-[0] sair
+[4] sair
 '''))
 
             match escolha3:

@@ -13,7 +13,7 @@ while True:
     escolha = int(input ('''[1] cadastrar apostador
 [2] registrar palpite
 [3] carregar selecoes
-[0] sair
+[4] sair
 '''))
     match escolha:
 
@@ -23,11 +23,8 @@ while True:
         case 2:
             limpar()
             print(70 * '-')
-            
-            escolha2 = int(input ("""[1] modo interativo
-[2] modo em loteS
-    """))
-            registrar(escolha2, partidas)
+        
+            registrar(partidas)
         case 3:
             grupos, status, partidas = carregarSelecoes()
             for i in grupos.items():
