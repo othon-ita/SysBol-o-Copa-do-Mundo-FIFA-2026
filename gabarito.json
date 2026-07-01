@@ -646,5 +646,133 @@
         "selecao2": "Panamá",
         "gols1": 3,
         "gols2": 4
+    },
+    {
+        "id": 73,
+        "fase": "fase de 32",
+        "selecao1": "Egito",
+        "selecao2": "Catar",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 74,
+        "fase": "fase de 32",
+        "selecao1": "Japão",
+        "selecao2": "Portugal",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 75,
+        "fase": "fase de 32",
+        "selecao1": "Uruguai",
+        "selecao2": "Noruega",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 76,
+        "fase": "fase de 32",
+        "selecao1": "Bósnia",
+        "selecao2": "Turquia",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 77,
+        "fase": "fase de 32",
+        "selecao1": "RD Congo",
+        "selecao2": "Panamá",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 78,
+        "fase": "fase de 32",
+        "selecao1": "Colômbia",
+        "selecao2": "Suécia",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 79,
+        "fase": "fase de 32",
+        "selecao1": "Croácia",
+        "selecao2": "Argélia",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 80,
+        "fase": "fase de 32",
+        "selecao1": "Tchéquia",
+        "selecao2": "Argentina",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 81,
+        "fase": "fase de 32",
+        "selecao1": "Equador",
+        "selecao2": "África do Sul",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 82,
+        "fase": "fase de 32",
+        "selecao1": "Alemanha",
+        "selecao2": "Austrália",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 83,
+        "fase": "fase de 32",
+        "selecao1": "França",
+        "selecao2": "Escócia",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 84,
+        "fase": "fase de 32",
+        "selecao1": "Costa do Marfim",
+        "selecao2": "Jordânia",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 85,
+        "fase": "fase de 32",
+        "selecao1": "Haiti",
+        "selecao2": "Bélgica",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 86,
+        "fase": "fase de 32",
+        "selecao1": "Senegal",
+        "selecao2": "Estados Unidos",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 87,
+        "fase": "fase de 32",
+        "selecao1": "Brasil",
+        "selecao2": "México",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 88,
+        "fase": "fase de 32",
+        "selecao1": "Espanha",
+        "selecao2": "Canadá",
+        "gols1": -1,
+        "gols2": -1
     }
 ]

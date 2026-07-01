@@ -1,5 +1,5 @@
 import json
-##comentar dps k 
+#gera a tabela de pontos da fase1, sem ordernar
 def gerar_tabela_pontos_fase1(nome_arquivo):
     tabela_pontos = {}
 
@@ -47,6 +47,5 @@ def gerar_tabela_pontos_fase1(nome_arquivo):
 
             grupo["selecoes"][partida["selecao1"]]["saldo_gols"] += partida["gols1"] - partida["gols2"]
             grupo["selecoes"][partida["selecao2"]]["saldo_gols"] += partida["gols2"] - partida["gols1"]
-
 
     return tabela_pontos
