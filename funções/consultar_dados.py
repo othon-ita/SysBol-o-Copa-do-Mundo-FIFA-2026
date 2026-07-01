@@ -2,6 +2,7 @@ import json
 from time import sleep
 from funções.limpar import limpar
 
+"""Verifica a existência de um arquivo JSON e retorna seu conteúdo se existir, caso contrário, exibe uma mensagem de erro e retorna None."""
 def verificar_existencia(caminho, tipo):
     try:
         with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
@@ -11,7 +12,8 @@ def verificar_existencia(caminho, tipo):
         print(f"Ops! Você esqueceu de carregar {tipo}. Volte aqui mais tarde!")
         sleep(5)
         return None
-    
+
+"""Mostra os palpites de um apostador, podendo exibir todos os palpites ou apenas os que estão ausentes."""
 def mostrar_palpites(caminho, tipo):
     with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
         leitura = json.load(arquivo)
@@ -30,6 +32,7 @@ def mostrar_palpites(caminho, tipo):
                     print(f"{i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
     input("\nPressione ENTER para continuar...")
 
+"""Mostra todos os jogos de acordo com o filtro e valor fornecidos, exibindo informações como ID, fase, grupo e partida."""
 def mostrar_jogos(caminho, filtro, valor):
     with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
         leitura = json.load(arquivo)
@@ -42,7 +45,8 @@ def mostrar_jogos(caminho, filtro, valor):
                 print(f"Partida: {i.get('selecao1')} x {i.get('selecao2')}")
             
     input("\nPressione ENTER para continuar...")
-    
+
+"""Submenu para a consulta de diferentes dados, permitindo ao usuário listar o calendário completo de jogos, jogos por fase, grupo, ID. Visualizar palpites pendentes, ou não, de um apostador, o gabarito oficial e os resultados pendentes no gabarito."""
 def consultar_dados():
     while True:
         limpar()

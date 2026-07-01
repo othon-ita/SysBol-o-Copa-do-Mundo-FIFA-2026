@@ -9,12 +9,12 @@ from time import sleep
 
 def cadastrar ():
     gruposLetras = {1 : 'A', 2: 'B', 3 : 'C', 4 : 'D', 5: 'E', 6: 'F', 7: 'G', 8 : 'H', 9 : 'I', 10 : 'J', 11 : 'K', 12: 'L' }
-    nome = input('''------Digite o seu nome:''')
+    nome = input('''Digite o seu nome:''')
     with open ('./apostadores/apostadores.txt', 'r') as arquivo:
         leitura = arquivo.read()
         if nome in leitura:
             print('Esse nome ja esta cadastrado!')
-            sleep (2)
+            sleep (5)
         else:
             lista = []
             contador = 0

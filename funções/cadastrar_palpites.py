@@ -1,14 +1,13 @@
 import json
 from time import sleep
 from funções.limpar import limpar
+from funções.consultar_dados import verificar_existencia
 
+
+"""Cadastra os palpites de um apostador de acordo com as partidas existentes no gabarito. Permite listar todos os jogos, listar apenas jogos sem palpite, cadastrar ou alterar o placar de um jogo e voltar ao menu principal. Além disso, verifica se as seleções já estão carregadas."""
 def cadastrar_palpites():
-    try:
-        with open ('./jogos/gabarito.json', 'r', encoding = 'utf-8') as arquivo:
-            partidas = json.load(arquivo)
-    except: 
-        print('Ops! Você esqueceu de carregar as seleções. Volte aqui mais tarde!')
-        sleep(5)
+    partidas = verificar_existencia("./jogos/gabarito")
+    if partidas == None:
         return
     
     status = True
