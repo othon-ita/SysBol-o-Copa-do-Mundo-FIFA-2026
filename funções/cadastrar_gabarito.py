@@ -7,7 +7,7 @@ def cadastrar_gabarito():
     ou utilize essa função para definir os gols de cada seleção.
 
     """
-    with open("gabarito.json", "r", encoding="utf-8") as arquivo:
+    with open("./jogos/gabarito.json", "r", encoding="utf-8") as arquivo:
         partidas = json.load(arquivo)
 
     for partida in partidas:
@@ -17,5 +17,5 @@ def cadastrar_gabarito():
         print(f"Digite a quantidade de gols da primeira seleção: ({partida["selecao2"]})")
         partida["gols2"] = int(input())
 
-    with open("gabarito.json", "w", encoding="utf-8") as arquivo:
+    with open("./jogos/gabarito.json", "w", encoding="utf-8") as arquivo:
         json.dump(partidas, arquivo, indent=4, ensure_ascii=False)
