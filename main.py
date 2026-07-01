@@ -20,7 +20,7 @@ while True:
 9. Consultar Dados do Sistema
 10. Sair
 
-'''
+Digite a opção desejada: '''
                         ))
     
     if escolha == 1:
