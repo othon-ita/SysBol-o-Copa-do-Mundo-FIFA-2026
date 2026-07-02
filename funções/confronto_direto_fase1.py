@@ -33,4 +33,4 @@ def confronto_direto(nome_arquivo, grupo, empatadas):
     #caso não encontre o confronto
     random.shuffle(empatadas)
 
-    return empatadas
+    return
