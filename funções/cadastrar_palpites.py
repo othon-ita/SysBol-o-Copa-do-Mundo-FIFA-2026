@@ -6,7 +6,7 @@ from funções.consultar_dados import verificar_existencia
 
 """Cadastra os palpites de um apostador de acordo com as partidas existentes no gabarito. Permite listar todos os jogos, listar apenas jogos sem palpite, cadastrar ou alterar o placar de um jogo e voltar ao menu principal. Além disso, verifica se as seleções já estão carregadas."""
 def cadastrar_palpites():
-    partidas = verificar_existencia("./jogos/gabarito")
+    partidas = verificar_existencia("./jogos/gabarito","as seleções")
     if partidas == None:
         return
     
