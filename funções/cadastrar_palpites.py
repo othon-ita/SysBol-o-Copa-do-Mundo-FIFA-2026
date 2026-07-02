@@ -3,30 +3,29 @@ from time import sleep
 from funções.limpar import limpar
 
 def cadastrar_palpites():
-    try:
-        with open ('./jogos/gabarito.json', 'r', encoding = 'utf-8') as arquivo:
+    
+    with open ('gabarito.json', 'r', encoding = 'utf-8') as arquivo:
             partidas = json.load(arquivo)
+    status = True
+    nome = input('Digite o seu nome:\n')
+    try:
+        with open (f'./apostadores/palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
+                        leitura = json.load(arquivo)
+        if (not leitura[71].get('selecao1')) or (not leitura[71].get('selecao2')):
+            for i in leitura:   
+                for j in partidas:
+                    if not status:
+                        status = True
+                        break
+                    if (i.get('id') == j.get('id')):
+                        status = False
+                        i.update({'selecao1' : j.get('selecao1'), 'selecao2' : j.get('selecao2')})
+            with open(f'./apostadores/palpites_{nome}.json', 'w', encoding = 'utf-8') as arquivo:
+                json.dump(leitura, arquivo, indent = 4)
     except: 
         print('Ops! Você esqueceu de carregar as selecoes. Volte aqui mais tarde!!')
         sleep(5)
         return
-    
-    status = True
-    nome = input('Digite o seu nome:\n')
-    
-    with open (f'./apostadores/palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
-                    leitura = json.load(arquivo)
-    if (not leitura[71].get('selecao1')) or (not leitura[71].get('selecao2')):
-        for i in leitura:   
-            for j in partidas:
-                if not status:
-                    status = True
-                    break
-                if (i.get('id') == j.get('id')):
-                    status = False
-                    i.update({'selecao1' : j.get('selecao1'), 'selecao2' : j.get('selecao2')})
-        with open(f'./apostadores/palpites_{nome}.json', 'w', encoding = 'utf-8') as arquivo:
-            json.dump(leitura, arquivo, indent = 4)
 
     while True:
         limpar()
@@ -61,5 +60,5 @@ def cadastrar_palpites():
 
                 with open (f'./apostadores/palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
                     json.dump(leitura, arquivo, indent = 4)
-            case 0 : 
+            case 4 : 
                 break

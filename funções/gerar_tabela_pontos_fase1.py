@@ -6,7 +6,7 @@ def gerar_tabela_pontos_fase1(nome_arquivo):
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
         partidas = json.load(arquivo)
 
-        for partida in partidas:
+        for partida in partidas[:72]:
 
             grupo_nome = partida["grupo"]
 
@@ -48,5 +48,5 @@ def gerar_tabela_pontos_fase1(nome_arquivo):
             grupo["selecoes"][partida["selecao1"]]["saldo_gols"] += partida["gols1"] - partida["gols2"]
             grupo["selecoes"][partida["selecao2"]]["saldo_gols"] += partida["gols2"] - partida["gols1"]
 
-
+    
     return tabela_pontos
