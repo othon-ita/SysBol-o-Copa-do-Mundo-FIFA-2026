@@ -1,7 +1,12 @@
 import json
 import random
-#funçao usada na funçao q gera as classificaçoes da fase 1, se houver empate em pontos, saldo de gols e gols marcados essa funçao é usada
 def confronto_direto(nome_arquivo, grupo, empatadas):
+    #as seleções empatadas vão pro parâmetro empatadas ([selecao1, selecao2])
+
+    """
+    Função que é chamada na função que gera as classificações da fase 1 caso haja empate em pontos, 
+    saldo de gols e gols marcados
+    """
 
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
         partidas = json.load(arquivo)
@@ -9,6 +14,7 @@ def confronto_direto(nome_arquivo, grupo, empatadas):
     #procura o confronto entre as seleções empatadas
     for partida in partidas:
 
+        #APENAS PROCURA O GRUPO DAS SELEÇÕES Q TÃO EMPATADAS NO JSON
         if partida["grupo"] != grupo:
             continue
 
@@ -27,10 +33,12 @@ def confronto_direto(nome_arquivo, grupo, empatadas):
 
             #se ainda tiver empate, vai para o sorteio
             else:
+                #retorna o sorteio da seleções empatadas random.shuffle([selecao1, selecao2]) caso ainda haja empate no confronto direto
                 random.shuffle(empatadas)
                 return empatadas
 
     #caso não encontre o confronto
     random.shuffle(empatadas)
 
-    return
+    #retorna o sorteio da seleções empatadas random.shuffle([selecao1, selecao2]) caso ainda haja empate no confronto direto
+    return empatadas
