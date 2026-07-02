@@ -12,8 +12,8 @@ def classificacao_fase1(tabela_pontos, nome_arquivo):
     #ordena por pontos, saldo de gols e gols marcados
     for grupo in tabela_pontos:
 
-        tabela_pontos[grupo]["selecoes"] = dict(
-            sorted(tabela_pontos[grupo]["selecoes"].items(), key=lambda item: (
+        tabela_pontos[grupo] = dict(
+            sorted(tabela_pontos[grupo].items(), key=lambda item: (
                     -item[1]["pontos"],
                     -item[1]["saldo_gols"],
                     -item[1]["gols_marcados"]
@@ -24,7 +24,7 @@ def classificacao_fase1(tabela_pontos, nome_arquivo):
     #verifica empates
     for grupo in tabela_pontos:
 
-        selecoes = list(tabela_pontos[grupo]["selecoes"].items())
+        selecoes = list(tabela_pontos[grupo].items())
 
         for i in range(len(selecoes) - 1):
 
@@ -42,6 +42,6 @@ def classificacao_fase1(tabela_pontos, nome_arquivo):
                     selecoes[i], selecoes[i + 1] = selecoes[i + 1], selecoes[i]
 
         #atualiza a classificação do grupo
-        tabela_pontos[grupo]["selecoes"] = dict(selecoes)
+        tabela_pontos[grupo] = dict(selecoes)
 
     return tabela_pontos

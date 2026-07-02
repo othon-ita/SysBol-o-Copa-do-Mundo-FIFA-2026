@@ -20,7 +20,7 @@ def partidas_fase32(tabela_pontos):
     for grupo in tabela_pontos:
 
         #.items pega o par chave (nome da seleção) valor (pontos, saldo de gols e gols marcados)
-        selecoes = list(tabela_pontos[grupo]["selecoes"].items())
+        selecoes = list(tabela_pontos[grupo].items())
 
         #pega o primeiro e segundo lugar, lembrando q os grupos já estão ordenados
         classificados.append(selecoes[0])
