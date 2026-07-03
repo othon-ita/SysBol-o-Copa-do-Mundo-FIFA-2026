@@ -12,7 +12,7 @@ def gerar_fase32(nome_arquivo):
     #monta a tabela com os pontos, saldo de gol e gols marcados
     tabela = gerar_tabela_pontos_fase1(nome_arquivo)
 
-    #A MESMA TABELA AGORA É ORDENADA COM AS CLASSIFICAÇÕES DAS SELEÇÕES BASEADA NOS PONTOS, SALDO DE GOLS, GOLS MARCADOS E CONFRONTO DIRETOS (ou sorteio se ainda houver empate)
+    #a mesma tabela agora é ordenada com as classificações das seleções baseada nos pontos, saldo de gols, gols marcados e confronto diretos (ou sorteio se ainda houver empate)
     tabela = classificacao_fase1(tabela, nome_arquivo)
 
     #gera as partidas da fase de 32 com base nas classificações
