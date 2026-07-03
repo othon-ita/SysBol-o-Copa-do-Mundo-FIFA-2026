@@ -1,6 +1,6 @@
-from gerar_tabela_pontos_fase1 import gerar_tabela_pontos_fase1
-from classificacao_fase_1 import classificacao_fase1
-from partidas_fase32 import partidas_fase32
+from funções.segunda_fase.fase_de_32.gerar_tabela_pontos_fase1 import gerar_tabela_pontos_fase1
+from funções.segunda_fase.fase_de_32.classificacao_fase_1 import classificacao_fase1
+from funções.segunda_fase.fase_de_32.partidas_fase32 import partidas_fase32
 import json
 
 

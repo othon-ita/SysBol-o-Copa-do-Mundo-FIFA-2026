@@ -1,4 +1,4 @@
-from confronto_direto_fase1 import confronto_direto
+from funções.segunda_fase.fase_de_32.confronto_direto_fase1 import confronto_direto
 
 
 
