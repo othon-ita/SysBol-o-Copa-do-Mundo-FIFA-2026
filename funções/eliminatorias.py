@@ -4,6 +4,7 @@ from funções.auxiliar import decisao
 from funções.segunda_fase.fase_de_32.gerar_fase_32 import gerar_fase32
 
 def eliminatorias():
+    ordem_chaveamento = []
     partidas = []
     nome_arquivo = decisao()
     
@@ -14,17 +15,21 @@ def eliminatorias():
         
         case 72:
             gerar_fase32(nome_arquivo)
+            return
+            
+        case 88:
             fase = 72
             condicao = 'nomal'
+            mata_mata = 3
         case 96:
             fase = 88
-            condicao = 'nomal'
-        case 100:
-            fase = 96
             condicao = 'normal'
+            mata_mata = 4
+        case 100:
+            condicao = 'normal'
+            fase = 96
         case 102:
             condicao = 'semi'
-            fase = 100
     vencedores = []
     
    #Coleta de dados de uma partida, no caso os nome da seleções e gols
@@ -66,15 +71,15 @@ def eliminatorias():
                 json.dump(leitura, arquivo, indent = 4 )
             
    #Ordem dos chaveamento das oitavas de finals
-    ordem_chaveamento = [1, 4, 0, 2, 3, 5, 6, 7, 10, 11, 8, 9, 13, 15, 12, 14]
+    ordem_chaveamento.append([1, 4, 0, 2, 3, 5, 6, 7, 10, 11, 8, 9, 13, 15, 12, 14])
     #Ordem dos chaveamentos das quartas de finais
-    ordem_chaveamento = [1, 2, 3, 4]
+    ordem_chaveamento.append([1, 2, 3, 4])
     #Ordem dos chaveamentos das semi finais
-    ordem_chaveamento = [1, 2]
+    ordem_chaveamento.append([1, 2])
     
 
     #Cria uma lista com base na ordem de chaveamento (Garante que só tenta buscar se existirem)
-    vencedores_ordenados = [vencedores[i-1] for i in ordem_chaveamento if (i-1) < len(vencedores)]
+    vencedores_ordenados = [vencedores[i-1] for i in ordem_chaveamento[mata_mata - 1] if (i-1) < len(vencedores)]
     
     #Agrupamento dos jogos em duplas
     for i in range(0, len(vencedores_ordenados), 2):
