@@ -18,22 +18,27 @@ def eliminatorias():
             return
             
         case 88:
-            fase = 72
+            num = 72
             condicao = 'nomal'
-            mata_mata = 3
+            fase = 3
+            id = 88
         case 96:
-            fase = 88
+            num = 88
             condicao = 'normal'
-            mata_mata = 4
+            fase = 4
+            id = 96
         case 100:
             condicao = 'normal'
-            fase = 96
+            num = 96
+            fase = 5
+            id = 100
         case 102:
             condicao = 'semi'
+            id = 102
     vencedores = []
     
    #Coleta de dados de uma partida, no caso os nome da seleções e gols
-    for jogo in leitura[fase:]:
+    for jogo in leitura[num:]:
         gols1 = jogo.get("gols1")
         gols2 = jogo.get("gols2")
         selecao1 = jogo.get("selecao1")
@@ -69,24 +74,31 @@ def eliminatorias():
             leitura.extend(partidas)
             with open (nome_arquivo, 'w', encoding = 'utf-8') as arquivo:
                 json.dump(leitura, arquivo, indent = 4 )
-            
+           
    #Ordem dos chaveamento das oitavas de finals
-    ordem_chaveamento.append([1, 4, 0, 2, 3, 5, 6, 7, 10, 11, 8, 9, 13, 15, 12, 14])
-    #Ordem dos chaveamentos das quartas de finais
-    ordem_chaveamento.append([1, 2, 3, 4])
-    #Ordem dos chaveamentos das semi finais
-    ordem_chaveamento.append([1, 2])
+    if fase == 3:
+        ordem_chaveamento = [1, 4, 0, 2, 3, 5, 6, 7, 10, 11, 8, 9, 13, 15, 12, 14]
+        mata_mata = 'oitavas de finais'
+        #Ordem dos chaveamentos das quartas de finais
+    elif fase == 4:
+        ordem_chaveamento = [1, 2, 3, 4]
+        mata_mata = 'quartas de finais'
+        #Ordem dos chaveamentos das semi finais
+    elif fase == 5:
+        ordem_chaveamento = [1, 2]
+        mata_mata = 'semi finais'
     
-
+     
     #Cria uma lista com base na ordem de chaveamento (Garante que só tenta buscar se existirem)
-    vencedores_ordenados = [vencedores[i-1] for i in ordem_chaveamento[mata_mata - 1] if (i-1) < len(vencedores)]
-    
+    vencedores_ordenados = [vencedores[i-1] for i in ordem_chaveamento if (i-1) < len(vencedores)]
+    conta = 0
     #Agrupamento dos jogos em duplas
     for i in range(0, len(vencedores_ordenados), 2):
         #Garante que tenha o par para formar a partida
+        conta += 1
         if i + 1 < len(vencedores_ordenados):
-            partidas.append({"id": '',
-            "fase": "",
+            partidas.append({"id": (id + conta),
+            "fase": mata_mata,
             "selecao1": vencedores_ordenados[i],
             "selecao2": vencedores_ordenados[i+1],
             "gols1": -1,

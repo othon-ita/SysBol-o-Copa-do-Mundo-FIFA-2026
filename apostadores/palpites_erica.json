@@ -777,9 +777,81 @@
     },
     {
         "id": "",
-        "fase": "",
+        "fase": "oitavas de finais",
         "selecao1": "RD Congo",
+        "selecao2": "Tch\u00e9quia",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": "",
+        "fase": "oitavas de finais",
+        "selecao1": "Inglaterra",
         "selecao2": "Esc\u00f3cia",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": "",
+        "fase": "oitavas de finais",
+        "selecao1": "Su\u00e9cia",
+        "selecao2": "Jap\u00e3o",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": "",
+        "fase": "oitavas de finais",
+        "selecao1": "Turquia",
+        "selecao2": "\u00c1ustria",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": "",
+        "fase": "oitavas de finais",
+        "selecao1": "B\u00e9lgica",
+        "selecao2": "Espanha",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": "",
+        "fase": "oitavas de finais",
+        "selecao1": "Fran\u00e7a",
+        "selecao2": "Paraguai",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": "",
+        "fase": "oitavas de finais",
+        "selecao1": "Portugal",
+        "selecao2": "Holanda",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": "",
+        "fase": "oitavas de finais",
+        "selecao1": "Argentina",
+        "selecao2": "Senegal",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 97,
+        "fase": "quartas de finais",
+        "selecao1": "Tch\u00e9quia",
+        "selecao2": "Inglaterra",
+        "gols1": -1,
+        "gols2": -1
+    },
+    {
+        "id": 98,
+        "fase": "quartas de finais",
+        "selecao1": "Jap\u00e3o",
+        "selecao2": "Turquia",
         "gols1": -1,
         "gols2": -1
     }
