@@ -7,7 +7,10 @@ def eliminatorias():
     ordem_chaveamento = []
     partidas = []
     nome_arquivo = decisao()
-    
+    num = 0
+    condicao = 0
+    fase = 0
+    id = 0
    #coleta de dados
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
         leitura = json.load(arquivo)
@@ -34,6 +37,7 @@ def eliminatorias():
             id = 100
         case 102:
             condicao = 'semi'
+            num = 100
             id = 102
     vencedores = []
     
@@ -45,6 +49,10 @@ def eliminatorias():
         selecao2 = jogo.get("selecao2")
         #Verifica quem ganhou, no caso de empate, é decidido na sorte (pênaltis)
         if condicao != 'semi':
+            if gols1 < 0 or gols2 < 0:
+                print('desculpa, mas voce ainda nao deu os seus palpites')
+                espera = input ()
+                return
             if gols1 > gols2:
                 vencedores.append(selecao1)
             elif gols2 > gols1:
@@ -52,28 +60,55 @@ def eliminatorias():
             else:
                 vencedores.append(random.choice([selecao1, selecao2]))
         else:
-            times = []
-            if gols1 > gols2:
-                times.append(selecao1)
-                times.append(selecao2)
-            elif gols2 > gols1:
-                times.append(selecao2)
-                times.append(selecao1)
-            else:
-                times.append(random.choice([selecao1, selecao2]))
-                times.append(selecao2 if times[0] == selecao1 else selecao1 )
-            for i in range(2):
-                #Garante que tenha o par para formar a partida
-                if i + 1 < len(vencedores_ordenados):
-                    partidas.append({"id": '',
-                    "fase": "",
-                    "selecao1": times[i],
-                    "selecao2": times[i+1],
-                    "gols1": -1,
-                    "gols2": -1 } )                             
+            # ... (após identificar que condicao == 'semi')
+            if gols1 < 0 or gols2 < 0:
+                print('desculpa, mas voce ainda nao deu os seus palpites')
+                espera = input ()
+                return
+            vencedores_semi = []
+            perdedores_semi = []
+
+            # 1. Primeiro, separe todos os vencedores e perdedores das duas semis
+            for jogo in leitura[num:]:
+                s1, s2 = jogo.get("selecao1"), jogo.get("selecao2")
+                g1, g2 = jogo.get("gols1"), jogo.get("gols2")
+                
+                if g1 > g2:
+                    vencedores_semi.append(s1)
+                    perdedores_semi.append(s2)
+                elif g2 > g1:
+                    vencedores_semi.append(s2)
+                    perdedores_semi.append(s1)
+                else:
+                    # Empate: decide na sorte
+                    escolhido = random.choice([s1, s2])
+                    vencedores_semi.append(escolhido)
+                    perdedores_semi.append(s2 if escolhido == s1 else s1)
+
+            
+            
+            partidas.append({
+                "id": id + 1,
+                "fase": "terceiro lugar",
+                "selecao1": perdedores_semi[0],
+                "selecao2": perdedores_semi[1],
+                "gols1": -1, "gols2": -1
+            })
+
+            partidas.append({
+                "id": id + 2,
+                "fase": "final",
+                "selecao1": vencedores_semi[0],
+                "selecao2": vencedores_semi[1],
+                "gols1": -1, "gols2": -1
+            })
+
+            # 3. Salve tudo de uma vez após o loop
             leitura.extend(partidas)
-            with open (nome_arquivo, 'w', encoding = 'utf-8') as arquivo:
-                json.dump(leitura, arquivo, indent = 4 )
+            with open(nome_arquivo, 'w', encoding='utf-8') as arquivo:
+                json.dump(leitura, arquivo, indent=4)
+            return
+           
            
    #Ordem dos chaveamento das oitavas de finals
     if fase == 3:
@@ -81,14 +116,15 @@ def eliminatorias():
         mata_mata = 'oitavas de finais'
         #Ordem dos chaveamentos das quartas de finais
     elif fase == 4:
-        ordem_chaveamento = [1, 2, 3, 4]
+        ordem_chaveamento = [1, 2, 5, 6, 3, 4, 7, 8]
         mata_mata = 'quartas de finais'
         #Ordem dos chaveamentos das semi finais
     elif fase == 5:
-        ordem_chaveamento = [1, 2]
+        ordem_chaveamento = [1, 2, 3, 4]
         mata_mata = 'semi finais'
     
-     
+    print(f"DEBUG: Total de jogos na lista: {len(leitura[num:])}")
+    espera = input()
     #Cria uma lista com base na ordem de chaveamento (Garante que só tenta buscar se existirem)
     vencedores_ordenados = [vencedores[i-1] for i in ordem_chaveamento if (i-1) < len(vencedores)]
     conta = 0
