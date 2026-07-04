@@ -19,7 +19,7 @@ def gerar_tabela_pontos_fase1(nome_arquivo):
                     
                 }
 
-            #só pra n ter q ficar repetindo tabela_pontos[grupo_nome] nas linhas abaixo
+            #só pra não ter que ficar repetindo tabela_pontos[grupo_nome] nas linhas abaixo
             grupo = tabela_pontos[grupo_nome]
 
             #verifica se a seleção tá no dicionário ou não
@@ -40,8 +40,8 @@ def gerar_tabela_pontos_fase1(nome_arquivo):
                 }
 
 
-            #CONTAGEM DOS PONTOS
-            #VITÓRIA OU EMPATE (3 PONTOS OU 1 PONTO)
+            #contagem dos pontos
+            #vitória ou empate (3 pontos ou 1 ponto)
             if partida["gols1"] > partida["gols2"]:
                 grupo[partida["selecao1"]]["pontos"] += 3
 
@@ -52,12 +52,12 @@ def gerar_tabela_pontos_fase1(nome_arquivo):
                 grupo[partida["selecao1"]]["pontos"] += 1
                 grupo[partida["selecao2"]]["pontos"] += 1
 
-            #GOLS MARCADOS
+            #gols marcados
             grupo[partida["selecao1"]]["gols_marcados"] += partida["gols1"]
             grupo[partida["selecao2"]]["gols_marcados"] += partida["gols2"]
 
 
-            #SALDO DE GOLS
+            #saldo de gols
             grupo[partida["selecao1"]]["saldo_gols"] += partida["gols1"] - partida["gols2"]
             grupo[partida["selecao2"]]["saldo_gols"] += partida["gols2"] - partida["gols1"]
 
