@@ -5,6 +5,7 @@ from funções.cadastrar_palpites import cadastrar_palpites
 from funções.preencher_aleat import preencher_aleatoriamente
 from funções.consultar_dados import consultar_dados
 from funções.eliminatorias import eliminatorias
+from funções.cadastrar_gabarito import cadastrar_gabarito
 
 while True:
     limpar()
@@ -35,6 +36,8 @@ Digite a opção desejada: '''
         preencher_aleatoriamente()
     elif escolha == 5:
         eliminatorias()
+    elif escolha == 6:
+        cadastrar_gabarito()
     elif escolha == 9:
         consultar_dados()
     elif escolha == 10:

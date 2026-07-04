@@ -22,7 +22,7 @@ def eliminatorias():
             
         case 88:
             num = 72
-            condicao = 'nomal'
+            condicao = 'normal'
             fase = 3
             id = 88
         case 96:
