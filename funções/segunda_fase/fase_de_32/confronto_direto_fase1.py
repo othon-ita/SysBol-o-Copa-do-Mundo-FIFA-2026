@@ -76,6 +76,6 @@ def confronto_direto(nome_arquivo, grupo, empatadas):
     selecoes_ordenadas = list(vitorias_ordenadas.keys())
 
 
-    #retorna a lista ordenada das seleções com se não houver empate nos pontos, saldo de gols e gols marcados nos confrontos diretos
+    #retorna a lista ordenada das seleções se não houver empate nos pontos, saldo de gols e gols marcados nos confrontos diretos
     #se ainda assim houver empate nos pontos, gols marcados e saldo de gols, retorna a lista embaralhada das seleções ordenadas
     return selecoes_ordenadas
