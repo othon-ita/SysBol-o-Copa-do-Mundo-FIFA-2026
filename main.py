@@ -6,6 +6,7 @@ from funções.preencher_aleat import preencher_aleatoriamente
 from funções.consultar_dados import consultar_dados
 from funções.eliminatorias import eliminatorias
 from funções.cadastrar_gabarito import cadastrar_gabarito
+from funções.relatorio_apostador.relatorio_apostador import relatorio_apostador
 
 while True:
     limpar()
@@ -38,6 +39,8 @@ Digite a opção desejada: '''
         eliminatorias()
     elif escolha == 6:
         cadastrar_gabarito()
+    elif escolha == 7:
+        relatorio_apostador()
     elif escolha == 9:
         consultar_dados()
     elif escolha == 10:

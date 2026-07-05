@@ -3,8 +3,8 @@ from random import randint
 
 """Esta função preenche aleatoriamente, números de 0 a 7, todas as partidas possíveis em que não hajam palpites definidos por um apostador em específico. Podendo haver palpites de empate somente na fase de grupos, ou seja, primeira fase."""
 def preencher_aleatoriamente():
-    nome = input('Digite o seu nome:\n')
-    with open (f'./apostadores/palpites_{nome}.json', 'r') as arquivo:
+    nome = input('Digite o seu nome: ')
+    with open (f'./apostadores/palpites_{nome}.json', 'r', encoding="utf-8") as arquivo:
         leitura = json.load(arquivo)
         
         for i in leitura:
@@ -26,3 +26,4 @@ def preencher_aleatoriamente():
                             break
     with open (f'./apostadores/palpites_{nome}.json', 'w') as arquivo:
         json.dump(leitura, arquivo, indent=4)
+    input("Palpites preenchidos aleatoriamente com sucesso!\nPressione Enter para continuar...")

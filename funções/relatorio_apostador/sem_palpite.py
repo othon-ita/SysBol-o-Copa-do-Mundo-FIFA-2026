@@ -1,0 +1,32 @@
+import json
+from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
+
+def sem_palpite(nome):
+    relatorio = ""
+    pontos = pontuação_apostador(nome)
+    sem_palpite = pontos[nome]['sem_palpite']
+    with open ('gabarito.json', 'r', encoding = 'utf-8') as arquivo:
+        gabarito = json.load(arquivo)
+    
+    print("\n" + 40*"=")
+    relatorio += "\n" + (40*"=")
+    print("SEM PALPITE")
+    relatorio += "\nSEM PALPITE"
+    print(40*"=")
+    relatorio += "\n" + (40*"=") + "\n"
+    
+    for i in sem_palpite['id']:
+        print(f"\nJogo {i}")
+        relatorio += f"\nJogo {i}"
+        for j in gabarito:
+            if j.get('id') == i:
+                print(f"{j.get('selecao1')} x [{j.get('selecao2')}")
+                relatorio += f"\n{j.get('selecao1')} x [{j.get('selecao2')}" + "\n"
+                print("\nPalpite não informado.")
+                relatorio += "\nPalpite não informado." + "\n"
+        
+        if i != sem_palpite['id'][-1]:
+            print("\n" + 40*"-")
+            relatorio += "\n" + (40*"-")
+            
+    return relatorio

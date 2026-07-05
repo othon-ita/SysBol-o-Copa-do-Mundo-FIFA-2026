@@ -11,11 +11,12 @@ def cadastrar_gabarito():
         partidas = json.load(arquivo)
 
     for partida in partidas:
-        print(f"Id da partida: {partida['id']}   \nFase: {partida['fase']} \nPartida: {partida['selecao1']} x {partida['selecao2']}")
-        print(f"Digite a quantidade de gols da primeira seleção: ({partida['selecao1']})")
-        partida["gols1"] = int(input())
-        print(f"Digite a quantidade de gols da primeira seleção: ({partida['selecao2']})")
-        partida["gols2"] = int(input())
+        if partida.get('gols1') == -1 or partida.get('gols2') == -1:
+            print(f"Id da partida: {partida['id']}   \nFase: {partida['fase']} \nPartida: {partida['selecao1']} x {partida['selecao2']}")
+            print(f"Digite a quantidade de gols da primeira seleção: ({partida['selecao1']})")
+            partida["gols1"] = int(input())
+            print(f"Digite a quantidade de gols da primeira seleção: ({partida['selecao2']})")
+            partida["gols2"] = int(input())
 
     with open("gabarito.json", "w", encoding="utf-8") as arquivo:
         json.dump(partidas, arquivo, indent=4, ensure_ascii=False)

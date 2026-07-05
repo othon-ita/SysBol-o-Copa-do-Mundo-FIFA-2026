@@ -11,7 +11,7 @@ def eliminatorias():
     condicao = 0
     fase = 0
     id = 0
-   #coleta de dados
+    #coleta de dados
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
         leitura = json.load(arquivo)
     match len(leitura):
@@ -50,8 +50,7 @@ def eliminatorias():
         #Verifica quem ganhou, no caso de empate, é decidido na sorte (pênaltis)
         if condicao != 'semi':
             if gols1 < 0 or gols2 < 0:
-                print('desculpa, mas voce ainda nao deu os seus palpites')
-                espera = input ()
+                input('Desculpe, mas voce ainda nao deu os seus palpites!\nPressione ENTER para continuar...')
                 return
             if gols1 > gols2:
                 vencedores.append(selecao1)
@@ -62,8 +61,7 @@ def eliminatorias():
         else:
             # ... (após identificar que condicao == 'semi')
             if gols1 < 0 or gols2 < 0:
-                print('desculpa, mas voce ainda nao deu os seus palpites')
-                espera = input ()
+                input('Desculpe, mas voce ainda nao deu os seus palpites!\nPressione ENTER para continuar...')
                 return
             vencedores_semi = []
             perdedores_semi = []
@@ -122,9 +120,18 @@ def eliminatorias():
     elif fase == 5:
         ordem_chaveamento = [1, 2, 3, 4]
         mata_mata = 'semi finais'
-    
-    print(f"DEBUG: Total de jogos na lista: {len(leitura[num:])}")
-    espera = input()
+        
+    if len(leitura) == 72:
+        input("Fase de 16 avos gerada com sucesso!\nPressione ENTER para continuar...")
+    elif len(leitura[num:]) == 16:
+        input("Fase de oitavas gerada com sucesso!\nPressione ENTER para continuar...")
+    elif len(leitura[num:]) == 8:
+        input("Fase de quartas gerada com sucesso!\nPressione ENTER para continuar...")
+    elif len(leitura[num:]) == 4:
+        input("Fase de semifinais gerada com sucesso!\nPressione ENTER para continuar...")
+    elif len(leitura) == 102:
+        input("Fase final e terceiro lugar gerada com sucesso!\nPressione ENTER para continuar...")
+        
     #Cria uma lista com base na ordem de chaveamento (Garante que só tenta buscar se existirem)
     vencedores_ordenados = [vencedores[i-1] for i in ordem_chaveamento if (i-1) < len(vencedores)]
     conta = 0
