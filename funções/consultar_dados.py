@@ -21,28 +21,51 @@ def mostrar_palpites(caminho, tipo):
     if tipo == "todos":
         print("Palpites Atuais:")
         for i in leitura:
-            if i.get('fase') == 1:
-                print(f"{i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+            try:
+                print(f"\nID: {i.get('id')}")
+                print(f"Fase: {i.get('fase')}")
+                print(f"Grupo: {i.get('grupo')}")
+                print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+            except:
+                print(f"\nID: {i.get('id')}")
+                print(f"Fase: {i.get('fase')}")
+                print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
     
     elif tipo == "sem palpites":
         print("Palpites Ausentes:")
         for i in leitura:
-            if i.get('fase') == 1:
-                if i.get('gols1') == -1 and i.get('gols2') == -1:
-                    print(f"{i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+            if i.get('gols1') == -1 or i.get('gols2') == -1:
+                try:
+                    print(f"\nID: {i.get('id')}")
+                    print(f"Fase: {i.get('fase')}")
+                    print(f"Grupo: {i.get('grupo')}")
+                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                except:
+                    print(f"\nID: {i.get('id')}")
+                    print(f"Fase: {i.get('fase')}")
+                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
     input("\nPressione ENTER para continuar...")
 
 """Mostra todos os jogos de acordo com o filtro e valor fornecidos, exibindo informações como ID, fase, grupo e partida."""
 def mostrar_jogos(caminho, filtro, valor):
     with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
         leitura = json.load(arquivo)
-        print("\nJogos:")
+        print(f"\nJogos:")
         for i in leitura:
-            if i.get(f'{filtro}') == valor:
-                print(f"\nID: {i.get('id')}")
-                print(f"Fase: {i.get('fase')}")
-                print(f"Grupo: {i.get('grupo')}")
-                print(f"Partida: {i.get('selecao1')} x {i.get('selecao2')}")
+            try:
+                if i.get(f'{filtro}') == valor:
+                    print(f"\nID: {i.get('id')}")
+                    print(f"Fase: {i.get('fase')}")
+                    print(f"Grupo: {i.get('grupo')}")
+                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+            except:
+                try:
+                    if i.get(f'{filtro}') == valor:
+                        print(f"\nID: {i.get('id')}")
+                        print(f"Fase: {i.get('fase')}")
+                        print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                except:
+                    continue
             
     input("\nPressione ENTER para continuar...")
 
@@ -62,13 +85,29 @@ def consultar_dados():
         print("9. Voltar ao menu principal \n")
         opção = int(input("Digite a opção desejada: "))
         
-        if opção == 2:
+        if opção == 1:
+            with open ("gabarito.json", 'r', encoding = 'utf-8') as arquivo:
+                leitura = json.load(arquivo)
+                
+            print("\n Calendário Completo:")
+            for i in leitura:
+                if i.get('fase') == 1:
+                    print(f"\nID: {i.get('id')}")
+                    print(f"Fase: {i.get('fase')}")
+                    print(f"Grupo: {i.get('grupo')}")
+                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                else:
+                    print(f"\nID: {i.get('id')}")
+                    print(f"Fase: {i.get('fase')}")
+                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                    
+        elif opção == 2:
             fase = int(input("Digite a fase desejada (Ex: 1, 2,...,6): "))
-            if fase == 1:
-                leitura = verificar_existencia("./jogos/gabarito", "as seleções")
+            if fase in [1, 2, 3, 4, 5, 6]:
+                leitura = verificar_existencia("gabarito", "as seleções")
                 if leitura == None:
                     return               
-                mostrar_jogos("./jogos/gabarito", "fase", fase)  
+                mostrar_jogos("gabarito", "fase", fase)
                        
             else:
                 print("Fase inválida. Por favor, digite uma fase válida (1, 2,...,6).")
@@ -76,10 +115,10 @@ def consultar_dados():
         elif opção == 3:
             grupo = input("Digite o grupo desejado (Ex: A, B,..., L): ")
             if grupo in ["A", "B", "C", "D", "E", "F", "G", "H", "L"]:
-                leitura = verificar_existencia("./jogos/gabarito", "as seleções")
+                leitura = verificar_existencia("gabarito", "as seleções")
                 if leitura == None:
                     return
-                mostrar_jogos("./jogos/gabarito", "grupo", f"Grupo {grupo}")
+                mostrar_jogos("gabarito", "grupo", f"Grupo {grupo}")
                 
             else:
                 print("Grupo inválido. Por favor, digite um grupo válido (A, B,..., L).")
@@ -87,24 +126,58 @@ def consultar_dados():
         
         elif opção == 4:
             id = int(input("Digite o ID do jogo desejado: "))
-            leitura = verificar_existencia("./jogos/gabarito", "as seleções")
+            leitura = verificar_existencia("gabarito", "as seleções")
             if leitura == None:
                 return
-            mostrar_jogos("./jogos/gabarito", "id", id)
+            mostrar_jogos("gabarito", "id", id)
         
         elif opção == 5:
             nome = input("Digite o seu nome: ")
-            leitura = verificar_existencia(f'./apostadores/palpites_{nome}', "os palpites do apostador")
+            leitura = verificar_existencia(f'./apostadores/palpites_{nome}', "os seus palpites")
             if leitura == None:
                 return
             mostrar_palpites(f'./apostadores/palpites_{nome}', "todos")
          
         elif opção == 6:
             nome = input("Digite o seu nome: ")
-            leitura = verificar_existencia(f'./apostadores/palpites_{nome}', "os palpites do apostador")
+            leitura = verificar_existencia(f'./apostadores/palpites_{nome}', "os seus palpites")
             if leitura == None:
                 return
             mostrar_palpites(f'./apostadores/palpites_{nome}', "sem palpites")
-            
+        
+        elif opção == 7:
+            with open ("gabarito.json", 'r', encoding = 'utf-8') as arquivo:
+                leitura = json.load(arquivo)
+                
+            print("\n Gabarito Oficial:")
+            for i in leitura:
+                if i.get('gols1') >= 0 and i.get('gols2') >= 0:
+                    if i.get('fase') == 1:
+                        print(f"\nID: {i.get('id')}")
+                        print(f"Fase: {i.get('fase')}")
+                        print(f"Grupo: {i.get('grupo')}")
+                        print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                    else:
+                        print(f"\nID: {i.get('id')}")
+                        print(f"Fase: {i.get('fase')}")
+                        print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+        
+        elif opção == 8:
+            with open ("gabarito.json", 'r', encoding = 'utf-8') as arquivo:
+                leitura = json.load(arquivo)
+                
+            print("\n Resultados Pendentes:")
+            for i in leitura:
+                if i.get('gols1') < 0 or i.get('gols2') < 0:
+                    if i.get('fase') == 1:
+                        print(f"\nID: {i.get('id')}")
+                        print(f"Fase: {i.get('fase')}")
+                        print(f"Grupo: {i.get('grupo')}")
+                        print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                    else:
+                        print(f"\nID: {i.get('id')}")
+                        print(f"Fase: {i.get('fase')}")
+                        print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+        
         elif opção == 9:
             break
