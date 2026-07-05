@@ -1,9 +1,9 @@
 import json
 from time import sleep
 from funções.limpar import limpar
-from consultar_dados.verificar_existencia import verificar_existencia
-from consultar_dados.mostrar_palpites import mostrar_palpites
-from consultar_dados.mostrar_jogos import mostrar_jogos
+from funções.consultar_dados.verificar_existencia import verificar_existencia
+from funções.consultar_dados.mostrar_palpites import mostrar_palpites
+from funções.consultar_dados.mostrar_jogos import mostrar_jogos
 
 """Submenu para a consulta de diferentes dados, permitindo ao usuário listar o calendário completo de jogos, jogos por fase, grupo, ID. Visualizar palpites pendentes, ou não, de um apostador, o gabarito oficial e os resultados pendentes no gabarito."""
 def consultar_dados():

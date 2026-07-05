@@ -1,7 +1,7 @@
 import json
 from time import sleep
 from funções.limpar import limpar
-from funções.consultar_dados.consultar_dados import verificar_existencia
+from funções.consultar_dados.verificar_existencia import verificar_existencia
 
 
 """Cadastra os palpites de um apostador de acordo com as partidas existentes no gabarito. Permite listar todos os jogos, listar apenas jogos sem palpite, cadastrar ou alterar o placar de um jogo e voltar ao menu principal. Além disso, verifica se as seleções já estão carregadas."""
