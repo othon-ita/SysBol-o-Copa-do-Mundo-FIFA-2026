@@ -1,4 +1,4 @@
-from funções.consultar_dados import verificar_existencia
+from funções.consultar_dados.consultar_dados import verificar_existencia
 
 """Função responsável por gerar a "tabela_pontuação", dicionário da pontuação de cada apostador indexado aos seus nomes. No dicionário de cada apostador, existem chaves como: pontos, placar_exato, placar_parcial, resultado_correto, erros e sem_palpite; representado, respectivamente a pontuação total e cada tipo de marcação de pontos. 
 

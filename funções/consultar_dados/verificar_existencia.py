@@ -1,0 +1,13 @@
+import json
+from time import sleep
+
+"""Verifica a existência de um arquivo JSON e retorna seu conteúdo se existir, caso contrário, exibe uma mensagem de erro e retorna None."""
+def verificar_existencia(caminho, tipo):
+    try:
+        with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
+            leitura = json.load(arquivo)
+        return leitura
+    except: 
+        print(f"Ops! Você esqueceu de carregar {tipo}. Volte aqui mais tarde!")
+        sleep(5)
+        return None

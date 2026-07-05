@@ -3,7 +3,7 @@ from funções.limpar import limpar
 from funções.carregar_selecoes import carregarSelecoes
 from funções.cadastrar_palpites import cadastrar_palpites
 from funções.preencher_aleat import preencher_aleatoriamente
-from funções.consultar_dados import consultar_dados
+from funções.consultar_dados.consultar_dados import consultar_dados
 from funções.eliminatorias import eliminatorias
 from funções.cadastrar_gabarito import cadastrar_gabarito
 from funções.relatorio_apostador.relatorio_apostador import relatorio_apostador

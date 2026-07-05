@@ -1,73 +1,9 @@
 import json
 from time import sleep
 from funções.limpar import limpar
-
-"""Verifica a existência de um arquivo JSON e retorna seu conteúdo se existir, caso contrário, exibe uma mensagem de erro e retorna None."""
-def verificar_existencia(caminho, tipo):
-    try:
-        with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
-            leitura = json.load(arquivo)
-        return leitura
-    except: 
-        print(f"Ops! Você esqueceu de carregar {tipo}. Volte aqui mais tarde!")
-        sleep(5)
-        return None
-
-"""Mostra os palpites de um apostador, podendo exibir todos os palpites ou apenas os que estão ausentes."""
-def mostrar_palpites(caminho, tipo):
-    with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
-        leitura = json.load(arquivo)
-    
-    if tipo == "todos":
-        print("Palpites Atuais:")
-        for i in leitura:
-            try:
-                print(f"\nID: {i.get('id')}")
-                print(f"Fase: {i.get('fase')}")
-                print(f"Grupo: {i.get('grupo')}")
-                print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-            except:
-                print(f"\nID: {i.get('id')}")
-                print(f"Fase: {i.get('fase')}")
-                print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-    
-    elif tipo == "sem palpites":
-        print("Palpites Ausentes:")
-        for i in leitura:
-            if i.get('gols1') == -1 or i.get('gols2') == -1:
-                try:
-                    print(f"\nID: {i.get('id')}")
-                    print(f"Fase: {i.get('fase')}")
-                    print(f"Grupo: {i.get('grupo')}")
-                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-                except:
-                    print(f"\nID: {i.get('id')}")
-                    print(f"Fase: {i.get('fase')}")
-                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-    input("\nPressione ENTER para continuar...")
-
-"""Mostra todos os jogos de acordo com o filtro e valor fornecidos, exibindo informações como ID, fase, grupo e partida."""
-def mostrar_jogos(caminho, filtro, valor):
-    with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
-        leitura = json.load(arquivo)
-        print(f"\nJogos:")
-        for i in leitura:
-            try:
-                if i.get(f'{filtro}') == valor:
-                    print(f"\nID: {i.get('id')}")
-                    print(f"Fase: {i.get('fase')}")
-                    print(f"Grupo: {i.get('grupo')}")
-                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-            except:
-                try:
-                    if i.get(f'{filtro}') == valor:
-                        print(f"\nID: {i.get('id')}")
-                        print(f"Fase: {i.get('fase')}")
-                        print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-                except:
-                    continue
-            
-    input("\nPressione ENTER para continuar...")
+from consultar_dados.verificar_existencia import verificar_existencia
+from consultar_dados.mostrar_palpites import mostrar_palpites
+from consultar_dados.mostrar_jogos import mostrar_jogos
 
 """Submenu para a consulta de diferentes dados, permitindo ao usuário listar o calendário completo de jogos, jogos por fase, grupo, ID. Visualizar palpites pendentes, ou não, de um apostador, o gabarito oficial e os resultados pendentes no gabarito."""
 def consultar_dados():
