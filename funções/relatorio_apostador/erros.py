@@ -1,6 +1,7 @@
 import json
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
+"""A função erros(nome) retorna as informações do relatório referentes aos palpites incorretos do apostador. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
 def erros(nome):
     relatorio = ""
     pontos = pontuação_apostador(nome)
@@ -17,6 +18,7 @@ def erros(nome):
     print(40*"=")
     relatorio += "\n" + (40*"=") +"\n"
     
+    #Estrutura de repetição para impressão e incremetação do relatório nos diferentes jogos com cumprem os requisitos da função
     for i in erros['id']:
         print(f"\nJogo {i}")
         relatorio += f"\nJogo {i}"

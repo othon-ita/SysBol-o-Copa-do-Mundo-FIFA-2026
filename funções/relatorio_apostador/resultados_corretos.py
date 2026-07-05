@@ -1,6 +1,7 @@
 import json
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
+"""A função resultados_corretos(nome) retorna as informações do relatório referentes aos palpites em que o apostador errou o placar do jogo porém acertou seu resultado, ou seja, informou correntamente a seleção que venceu e a que perdeu. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
 def resultados_corretos(nome):
     relatorio = ""
     pontos = pontuação_apostador(nome)
@@ -17,6 +18,7 @@ def resultados_corretos(nome):
     print(40*"=")
     relatorio += "\n" + (40*"=") + "\n"
     
+    #Estrutura de repetição para impressão e incremetação do relatório nos diferentes jogos com cumprem os requisitos da função
     for i in resultado_correto['id']:
         print(f"\nJogo {i}")
         relatorio += f"\nJogo {i}"

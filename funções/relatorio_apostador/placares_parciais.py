@@ -1,6 +1,7 @@
 import json
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
+"""A função placares_parciais(nome) retorna as informações do relatório referentes aos palpites em que o apostador acertou parcialmente o resultado de uma partida, ou seja, acertou o placar de um dos tipos concorrentes. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
 def placares_parciais(nome):
     relatorio = ""
     pontos = pontuação_apostador(nome)
@@ -16,7 +17,8 @@ def placares_parciais(nome):
     relatorio += f"\nPLACARES PARCIAIS ({placar_parcial['vezes']*7} pontos)"
     print(40*"=")
     relatorio += "\n" + (40*"=") + "\n"
-    
+
+    #Estrutura de repetição para impressão e incremetação do relatório nos diferentes jogos com cumprem os requisitos da função
     for i in placar_parcial['id']:
         print(f"\nJogo {i}")
         relatorio += f"\nJogo {i}"

@@ -1,6 +1,7 @@
 import json
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
+"""A função placares_exatos(nome) retorna as informações do relatório referentes aos palpites em que o apostador teve um acerto de 100% de seu palpite. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
 def placares_exatos(nome):
     relatorio = ""
     pontos = pontuação_apostador(nome)
@@ -17,6 +18,7 @@ def placares_exatos(nome):
     print(40*"=")
     relatorio += "\n" + (40*"=") + "\n"
     
+    #Estrutura de repetição para impressão e incremetação do relatório nos diferentes jogos com cumprem os requisitos da função
     for i in placar_exato['id']:
         print(f"\nJogo {i}")
         relatorio += f"\nJogo {i}"
