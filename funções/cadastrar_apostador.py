@@ -10,33 +10,6 @@ from time import sleep
 def cadastrar ():
     gruposLetras = {1 : 'A', 2: 'B', 3 : 'C', 4 : 'D', 5: 'E', 6: 'F', 7: 'G', 8 : 'H', 9 : 'I', 10 : 'J', 11 : 'K', 12: 'L' }
     nome = input('''Digite o seu nome: ''')
-<<<<<<< HEAD
-    with open ('./apostadores/apostadores.txt', 'r') as arquivo:
-        leitura = arquivo.read()
-        if nome in leitura:
-            input('Esse nome ja esta cadastrado!\nPressione Enter para continuar...')
-        else:
-            lista = []
-            contador = 0
-            for  i in range(72):
-                if i % 6 == 0:
-                    contador += 1
-                dados = {
-                "id": i + 1,
-                "fase": 1,
-                "grupo": gruposLetras[contador],
-                "selecao1": "",
-                "selecao2": "",
-                "gols1": -1, 
-                "gols2": -1
-                }
-                lista.append(dados)
-            with open ('./apostadores/apostadores.txt', 'a') as arquivo:
-                arquivo.write(f'{nome}\n')     
-            with open (f'./apostadores/palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
-                json.dump(lista, arquivo, indent = 4)
-                input('Cadastrado com sucesso!\nPressione Enter para continuar...')
-=======
     try:
         with open ('./apostadores/apostadores.txt', 'r') as arquivo:
             leitura = arquivo.read()
@@ -70,4 +43,3 @@ def cadastrar ():
         input("Aperte ENTER para continuar")
         with open('./apostadores/apostadores.txt', 'w') as arquivo:
             arquivo.write("")
->>>>>>> cfb68d06621f87ec7c45d311cfc798c72bc28b78
