@@ -5,4 +5,4 @@ def decisao():
         nome = input('Digite o seu nome:')
         return f'./apostadores/palpites_{nome}.json'
     elif escolha == '2':
-        return './jogos/gabarito.json'
+        return 'gabarito.json'
