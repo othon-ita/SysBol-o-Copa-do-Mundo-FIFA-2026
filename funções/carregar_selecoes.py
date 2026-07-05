@@ -33,6 +33,7 @@ def carregarSelecoes():
                 print("Erro: linha vazia detectada! Carregamento de seleções cancelado.")
                 dicionarioSelecoes.clear()
                 ok = False
+                input("Pressione ENTER para continuar")
                 break
 
             soma +=1
@@ -42,6 +43,7 @@ def carregarSelecoes():
                 print("Erro: número incorreto de seleções participantes! Carregamento de seleções cancelado.")
                 dicionarioSelecoes.clear()
                 ok = False
+                input("Pressione ENTER para continuar")
                 break
 
             #Verifica se há seleções repetidas
@@ -49,6 +51,7 @@ def carregarSelecoes():
                 print(f"Erro: Seleção repetida! ({linha.strip()}) Carregamento de seleções cancelado.")
                 dicionarioSelecoes.clear()
                 ok = False
+                input("Pressione ENTER para continuar")
                 break
             else:
                 selecoes_adicionadas.append(linha.strip())
@@ -67,6 +70,7 @@ def carregarSelecoes():
             ok = False
             print("Erro: número incorreto de seleções participantes! Carregamento de seleções cancelado.")
             dicionarioSelecoes.clear()
+            input("Pressione ENTER para continuar")
 
 
     #Lista que armazena os dicionários de partidas da primeira fase
@@ -91,7 +95,8 @@ def carregarSelecoes():
 
 
     #Cria um arquivo gabarito.json com as partidas da primeira fase
-    with open("gabarito.json", "w", encoding="utf-8") as arquivo:
-        json.dump(partidas, arquivo, indent=4, ensure_ascii=False)
+    if ok == True:
+        with open("gabarito.json", "w", encoding="utf-8") as arquivo:
+            json.dump(partidas, arquivo, indent=4, ensure_ascii=False)
 
     return dicionarioSelecoes, ok, partidas
