@@ -71,13 +71,14 @@ def relatorio_apostador():
         print(f"\nPONTUAÇÃO FINAL: {pontos[nome]['pontos']} pontos")
         relatorio += f"\nPONTUAÇÃO FINAL: {pontos[nome]['pontos']} pontos" + "\n"
         
-        #Verificação de desejo, ou não, da gravação do relatório em arquivo texto
+        #Verificação de desejo, ou não, da gravação do relatório individual em arquivo texto
         while True:
-            criar_arquivo = input("Deseja gravar o resultado em arquivo texto? (S/N): ")
+            criar_arquivo = input("Deseja gravar o resultado em arquivo de texto? (S/N): ")
             if criar_arquivo == "S" or criar_arquivo == "s":
                 with open(f'relatorio_{nome}.txt', 'w', encoding = 'utf-8') as arquivo:
                     arquivo.write(relatorio)
-                input(f"\nRelatório gravado em: ./relatorios/relatorio_{nome}.txt.\nPressione ENTER para continuar...")
+                input(f"\nRelatório gravado em: /relatorio_{nome}.txt.\nPressione ENTER para continuar...")
+                break
                 
             elif criar_arquivo == "N" or criar_arquivo == "n":
                 break
