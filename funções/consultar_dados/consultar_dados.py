@@ -37,12 +37,8 @@ def consultar_dados():
                     print(f"\nID: {i.get('id')}")
                     print(f"Fase: {i.get('fase')}")
                     print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-<<<<<<< HEAD
-            input("Pressione ENTER para continuar")        
-=======
             input("\nPressione ENTER para continuar...")
                     
->>>>>>> 8fd2d2e5c1c12db90eca8b0c4db86d97a2a49e97
         elif opção == 2:
             fase = int(input("Digite a fase desejada (Ex: 1, 2,...,6): "))
             if fase in [1, 2, 3, 4, 5, 6]:
@@ -130,12 +126,8 @@ def consultar_dados():
                         print(f"\nID: {i.get('id')}")
                         print(f"Fase: {i.get('fase')}")
                         print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-<<<<<<< HEAD
-            input("Pressione ENTER para continuar")
-=======
             input("\nPressione ENTER para continuar...")
         
->>>>>>> 8fd2d2e5c1c12db90eca8b0c4db86d97a2a49e97
         elif opção == 9:
             break
         else:

@@ -4,7 +4,8 @@ from funções.auxiliar import decisao
 from funções.segunda_fase.fase_de_32.gerar_fase_32 import gerar_fase32
 
 def eliminatorias():
-
+    '''''Realiza o confronto de cada partida desde a fase 32 até a final, depois do confronto são definido os próximo jogos
+     e adicionado no arquivo de palpites do apostador'''
     ordem_chaveamento = []
     partidas = []
     nome_arquivo = decisao()
@@ -51,7 +52,7 @@ def eliminatorias():
             gols2 = jogo.get("gols2")
             selecao1 = jogo.get("selecao1")
             selecao2 = jogo.get("selecao2")
-            if gols1 <= 0 or gols2 <= 0:
+            if gols1 < 0 or gols2 < 0:
                 input('Desculpe, mas você ainda não deu os seus palpites completamente!\nPressione ENTER para continuar')
                 return
             elif selecao1 == '' or selecao2 == '':
@@ -155,5 +156,5 @@ def eliminatorias():
         return partidas
     
     except:
-        input('Desculpe, mas você ainda não está cadastrado no sistema\n Pressione ENTER para continuar...')
+        input('\nDesculpe, mas você ainda não está cadastrado no sistema\nPressione ENTER para continuar...')
         return
