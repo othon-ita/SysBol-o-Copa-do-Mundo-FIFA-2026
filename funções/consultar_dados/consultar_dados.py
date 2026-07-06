@@ -116,6 +116,7 @@ def consultar_dados():
                         print(f"\nID: {i.get('id')}")
                         print(f"Fase: {i.get('fase')}")
                         print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+            input("\nPressione ENTER para continuar...")
         
         elif opção == 9:
             break
