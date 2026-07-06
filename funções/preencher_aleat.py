@@ -1,11 +1,13 @@
 import json
 from random import randint
+from funções.auxiliar import decisao
 
 """Esta função preenche aleatoriamente, números de 0 a 7, todas as partidas possíveis em que não hajam palpites definidos por um apostador em específico. Podendo haver palpites de empate somente na fase de grupos, ou seja, primeira fase."""
 def preencher_aleatoriamente():
-    nome = input('Digite o seu nome: ')
+    
     try:
-        with open (f'./apostadores/palpites_{nome}.json', 'r', encoding="utf-8") as arquivo:
+        nome_arquivo = decisao()
+        with open (nome_arquivo, 'r', encoding="utf-8") as arquivo:
             leitura = json.load(arquivo)
             
             for i in leitura:
@@ -25,7 +27,7 @@ def preencher_aleatoriamente():
                             i['gols2'] = randint(0, 7)
                             if (i['gols1'] != i['gols2']):
                                 break
-        with open (f'./apostadores/palpites_{nome}.json', 'w') as arquivo:
+        with open (nome_arquivo, 'w') as arquivo:
             json.dump(leitura, arquivo, indent=4)
         input("Palpites preenchidos aleatoriamente com sucesso!\nPressione Enter para continuar...")
     except FileNotFoundError:
