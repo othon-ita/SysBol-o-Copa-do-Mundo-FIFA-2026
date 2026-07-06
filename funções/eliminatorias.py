@@ -4,6 +4,7 @@ from funções.auxiliar import decisao
 from funções.segunda_fase.fase_de_32.gerar_fase_32 import gerar_fase32
 
 def eliminatorias():
+
     ordem_chaveamento = []
     partidas = []
     nome_arquivo = decisao()
@@ -15,7 +16,7 @@ def eliminatorias():
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
         leitura = json.load(arquivo)
     match len(leitura):
-        
+        #analisa em qual fase está atualmente
         case 72:
             gerar_fase32(nome_arquivo)
             return
@@ -41,17 +42,21 @@ def eliminatorias():
             id = 102
     vencedores = []
     
-   #Coleta de dados de uma partida, no caso os nome da seleções e gols
+#Coleta de dados de uma partida, no caso os nome da seleções e gols
+     
+
     for jogo in leitura[num:]:
         gols1 = jogo.get("gols1")
         gols2 = jogo.get("gols2")
         selecao1 = jogo.get("selecao1")
         selecao2 = jogo.get("selecao2")
+        if gols1 < 0 or gols2 < 0:
+            input('Desculpe, mas você ainda não deu os seus palpites!\nPressione ENTER para continuar')
+            return
+        elif selecao1 == '' or selecao2 == '':
+            input('Desculpe, mas você ainda não carregou as seleções no seu arquivo! \n Pressione ENTER para continuar ')
         #Verifica quem ganhou, no caso de empate, é decidido na sorte (pênaltis)
         if condicao != 'semi':
-            if gols1 < 0 or gols2 < 0:
-                input('Desculpe, mas voce ainda nao deu os seus palpites!\nPressione ENTER para continuar...')
-                return
             if gols1 > gols2:
                 vencedores.append(selecao1)
             elif gols2 > gols1:
@@ -59,14 +64,11 @@ def eliminatorias():
             else:
                 vencedores.append(random.choice([selecao1, selecao2]))
         else:
-            # ... (após identificar que condicao == 'semi')
-            if gols1 < 0 or gols2 < 0:
-                input('Desculpe, mas voce ainda nao deu os seus palpites!\nPressione ENTER para continuar...')
-                return
+            #após identificar que condicao == 'semi'
             vencedores_semi = []
             perdedores_semi = []
 
-            # 1. Primeiro, separe todos os vencedores e perdedores das duas semis
+            #Primeiro, separa todos os vencedores e perdedores das duas semis
             for jogo in leitura[num:]:
                 s1, s2 = jogo.get("selecao1"), jogo.get("selecao2")
                 g1, g2 = jogo.get("gols1"), jogo.get("gols2")
@@ -101,14 +103,14 @@ def eliminatorias():
                 "gols1": -1, "gols2": -1
             })
 
-            # 3. Salve tudo de uma vez após o loop
+            #Salva tudo de uma vez após o loop
             leitura.extend(partidas)
             with open(nome_arquivo, 'w', encoding='utf-8') as arquivo:
                 json.dump(leitura, arquivo, indent=4)
             return
-           
-           
-   #Ordem dos chaveamento das oitavas de finals
+        
+        
+        #Ordem dos chaveamento das oitavas de finals
     if fase == 3:
         ordem_chaveamento = [1, 4, 0, 2, 3, 5, 6, 7, 10, 11, 8, 9, 13, 15, 12, 14]
         mata_mata = 'oitavas de finais'

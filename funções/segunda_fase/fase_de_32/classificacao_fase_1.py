@@ -7,7 +7,7 @@ def classificacao_fase1(tabela_pontos, nome_arquivo):
     Se houver empate verifica os confrontos diretos pela função confronto_direto,
     se mesmo assim ainda houver empates, desempata por sorteio.
     """
-
+    
     #ordena por pontos, saldo de gols e gols marcados
     for grupo in tabela_pontos:
 

@@ -4,29 +4,32 @@ from funções.limpar import limpar
 from funções.consultar_dados.verificar_existencia import verificar_existencia
 
 
-"""Cadastra os palpites de um apostador de acordo com as partidas existentes no gabarito. Permite listar todos os jogos, listar apenas jogos sem palpite, cadastrar ou alterar o placar de um jogo e voltar ao menu principal. Além disso, verifica se as seleções já estão carregadas."""
+"""Cadastra os palpites de um apostador de acordo com as partidas existentes no gabarito. Permite listar todos os jogos, listar apenas jogos sem palpite, 
+   cadastrar ou alterar o placar de um jogo e voltar ao menu principal. Além disso, verifica se as seleções já estão carregadas."""
 def cadastrar_palpites():
+    #verifica a existência do gabarito
     partidas = verificar_existencia("gabarito","as seleções")
     if partidas == None:
         return
     
     status = True
     nome = input('Digite o seu nome: ')
-    
-    with open (f'./apostadores/palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
-                    leitura = json.load(arquivo)
-    if (not leitura[71].get('selecao1')) or (not leitura[71].get('selecao2')):
-        for i in leitura:   
-            for j in partidas:
-                if not status:
-                    status = True
-                    break
-                if (i.get('id') == j.get('id')):
-                    status = False
-                    i.update({'selecao1' : j.get('selecao1'), 'selecao2' : j.get('selecao2')})
-        with open(f'./apostadores/palpites_{nome}.json', 'w', encoding = 'utf-8') as arquivo:
-            json.dump(leitura, arquivo, indent = 4)
-
+    try:
+        with open (f'./apostadores/palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
+                        leitura = json.load(arquivo)
+        if (not leitura[71].get('selecao1')) or (not leitura[71].get('selecao2')):
+            for i in leitura:   
+                for j in partidas:
+                    if not status:
+                        status = True
+                        break
+                    if (i.get('id') == j.get('id')):
+                        status = False
+                        i.update({'selecao1' : j.get('selecao1'), 'selecao2' : j.get('selecao2')})
+            with open(f'./apostadores/palpites_{nome}.json', 'w', encoding = 'utf-8') as arquivo:
+                json.dump(leitura, arquivo, indent = 4)
+    except FileNotFoundError:
+        input('Desculpe, mas você ainda não está cadastrado no sistema\n Pressione ENTER para continuar...')
     while True:
         limpar()
         print(8*"*", f"Palpites de {nome}", 8*"*")
