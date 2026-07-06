@@ -53,7 +53,7 @@ def eliminatorias():
         if gols1 < 0 or gols2 < 0:
             input('Desculpe, mas você ainda não deu os seus palpites!\nPressione ENTER para continuar')
             return
-        elif selecao1 == None or selecao2 == None:
+        elif selecao1 == '' or selecao2 == '':
             input('Desculpe, mas você ainda não carregou as seleções no seu arquivo! \n Pressione ENTER para continuar ')
         #Verifica quem ganhou, no caso de empate, é decidido na sorte (pênaltis)
         if condicao != 'semi':
@@ -65,9 +65,6 @@ def eliminatorias():
                 vencedores.append(random.choice([selecao1, selecao2]))
         else:
             #após identificar que condicao == 'semi'
-            if gols1 < 0 or gols2 < 0:
-                input('Desculpe, mas voce ainda não deu os seus palpites!\nPressione ENTER para continuar')
-                return
             vencedores_semi = []
             perdedores_semi = []
 
