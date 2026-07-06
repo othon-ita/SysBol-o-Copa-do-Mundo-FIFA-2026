@@ -22,8 +22,9 @@ def consultar_dados():
         opção = int(input("Digite a opção desejada: "))
         
         if opção == 1:
-            with open ("gabarito.json", 'r', encoding = 'utf-8') as arquivo:
-                leitura = json.load(arquivo)
+            leitura = verificar_existencia("gabarito", "as seleções")
+            if leitura == None:
+                return
                 
             print("\n Calendário Completo:")
             for i in leitura:
@@ -36,6 +37,7 @@ def consultar_dados():
                     print(f"\nID: {i.get('id')}")
                     print(f"Fase: {i.get('fase')}")
                     print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+            input("\nPressione ENTER para continuar...")
                     
         elif opção == 2:
             fase = int(input("Digite a fase desejada (Ex: 1, 2,...,6): "))
@@ -117,3 +119,5 @@ def consultar_dados():
         
         elif opção == 9:
             break
+        else:
+            input("\nDigito inválido!\nPressione ENTER para continuar...")
