@@ -1,3 +1,7 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 from funções.cadastrar_apostador import cadastrar
 from funções.limpar import limpar
 from funções.carregar_selecoes import carregarSelecoes

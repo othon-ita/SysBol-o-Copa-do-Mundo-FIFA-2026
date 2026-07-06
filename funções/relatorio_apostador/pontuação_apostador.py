@@ -1,3 +1,7 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 from funções.consultar_dados.consultar_dados import verificar_existencia
 
 """Função responsável por gerar a "tabela_pontuação", dicionário da pontuação de cada apostador indexado aos seus nomes. No dicionário de cada apostador, existem chaves como: pontos, placar_exato, placar_parcial, resultado_correto, erros e sem_palpite; representado, respectivamente a pontuação total e cada tipo de marcação de pontos. 

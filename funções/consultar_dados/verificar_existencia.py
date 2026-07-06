@@ -1,3 +1,7 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
 
 """Verifica a existência de um arquivo JSON e retorna seu conteúdo se existir, caso contrário, exibe uma mensagem de erro e retorna None."""
