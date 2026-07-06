@@ -43,8 +43,8 @@ def cadastrar_gabarito():
         #se a partida já foi cadastrada:
         if partida["gols1"] > -1 and partida["gols2"] > -1:
             print("Cadastro realizado anteriormente:")
-            print(f"Gols da primeira seleção ({partida['selecao1']}): {partida["gols1"]}")
-            print(f"Gols da segunda seleção ({partida['selecao2']}): {partida["gols1"]}")
+            print(f"Gols da primeira seleção ({partida['selecao1']}): {partida['gols1']}")
+            print(f"Gols da segunda seleção ({partida['selecao2']}): {partida['gols1']}")
             print("Altere o resultado abaixo:")
 
         print(f"Digite a quantidade de gols da primeira seleção: ({partida['selecao1']})")
