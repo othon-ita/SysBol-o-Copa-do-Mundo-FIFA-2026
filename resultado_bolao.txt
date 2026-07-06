@@ -1,0 +1,5 @@
+********** RESULTADO FINAL DO BOLÃO **********
+
+Posição | Apostador | Pontos | Placar Exato | Placar Parcial | Resultado Correto | Erros
+
+1º   | andre   | 179   | 2   | 12   | 15   | 43
