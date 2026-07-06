@@ -9,8 +9,12 @@ def gerar_fase32(nome_arquivo):
     """
     Função que chama outras funções necessárias para gerar as partidas da fase de 32
     """
+
     #monta a tabela com os pontos, saldo de gol e gols marcados
     tabela = gerar_tabela_pontos_fase1(nome_arquivo)
+    #verifica se palpites foram dados 
+    if tabela == None:
+        return
 
     #a mesma tabela agora é ordenada com as classificações das seleções baseada nos pontos, saldo de gols, gols marcados e confronto diretos (ou sorteio se ainda houver empate)
     tabela = classificacao_fase1(tabela, nome_arquivo)

@@ -8,17 +8,22 @@ from time import sleep
    'apostadores.txt' """
 
 def cadastrar ():
+    #referência para organizar os times em grupos 
     gruposLetras = {1 : 'A', 2: 'B', 3 : 'C', 4 : 'D', 5: 'E', 6: 'F', 7: 'G', 8 : 'H', 9 : 'I', 10 : 'J', 11 : 'K', 12: 'L' }
     nome = input('''Digite o seu nome: ''')
+    #verifica se existe o arquivo 'apostadores.txt'
     try:
+
         with open ('./apostadores/apostadores.txt', 'r') as arquivo:
             leitura = arquivo.read()
+            #verifica a existência no arquivo 'apostadores.txt', caso já exista, aparece a mensagem padrão e volta ao menu principal
             if nome in leitura:
                 print('Esse nome ja esta cadastrado!')
-                sleep (5)
+                sleep (2)
             else:
                 lista = []
                 contador = 0
+                #organiza as partidas sem os nomes da selecoes em 6 para cada grupo
                 for  i in range(72):
                     if i % 6 == 0:
                         contador += 1
@@ -38,6 +43,7 @@ def cadastrar ():
                     json.dump(lista, arquivo, indent = 4)
                     print ('Cadastrado com sucesso!')
                     sleep (2)
+    #caso não exista, mensagem padrão aparecera no sistema e criará o arquivo 
     except FileNotFoundError:
         print("O arquivo não de apostadores existe. Criando um novo... Tente novamente.")
         input("Aperte ENTER para continuar")
