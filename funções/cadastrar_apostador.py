@@ -42,10 +42,10 @@ def cadastrar ():
                     "gols2": -1
                     }
                     lista.append(dados)
-                    with open ('./apostadores/apostadores.txt', 'a') as arquivo:
-                        arquivo.write(f'{nome}\n') 
-                    with open (f'./apostadores/palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
-                        json.dump(lista, arquivo, indent = 4)   
+                with open ('./apostadores/apostadores.txt', 'a') as arquivo:
+                    arquivo.write(f'{nome}\n') 
+                with open (f'./apostadores/palpites_{nome}.json ', 'w', encoding = 'utf-8') as arquivo:
+                    json.dump(lista, arquivo, indent = 4)   
                 status = True
                 try:  
                     with open (f'./apostadores/palpites_{nome}.json', 'r', encoding = 'utf-8') as arquivo:
