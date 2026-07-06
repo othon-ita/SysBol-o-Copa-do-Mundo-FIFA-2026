@@ -1,9 +1,15 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
 from random import randint
 from funções.auxiliar import decisao
 
-"""Esta função preenche aleatoriamente, números de 0 a 7, todas as partidas possíveis em que não hajam palpites definidos por um apostador em específico. Podendo haver palpites de empate somente na fase de grupos, ou seja, primeira fase."""
 def preencher_aleatoriamente():
+    
+    """Esta função preenche aleatoriamente, números de 0 a 7, todas as partidas possíveis em que não hajam palpites definidos por um apostador em específico. Podendo haver palpites de empate somente na fase de grupos, ou seja, primeira fase."""
+    
     
     try:
         nome_arquivo = decisao()

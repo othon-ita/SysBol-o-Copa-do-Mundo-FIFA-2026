@@ -1,12 +1,16 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
-from time import sleep
 from funções.limpar import limpar
 from funções.consultar_dados.verificar_existencia import verificar_existencia
 from funções.consultar_dados.mostrar_palpites import mostrar_palpites
 from funções.consultar_dados.mostrar_jogos import mostrar_jogos
 
-"""Submenu para a consulta de diferentes dados, permitindo ao usuário listar o calendário completo de jogos, jogos por fase, grupo, ID. Visualizar palpites pendentes, ou não, de um apostador, o gabarito oficial e os resultados pendentes no gabarito."""
 def consultar_dados():
+    """Submenu para a consulta de diferentes dados, permitindo ao usuário listar o calendário completo de jogos, jogos por fase, grupo, ID. Visualizar palpites pendentes, ou não, de um apostador, o gabarito oficial e os resultados pendentes no gabarito."""
+    
     while True:
         limpar()
         print(8*"*", "Consulta de Dados", 8*"*")
@@ -19,7 +23,12 @@ def consultar_dados():
         print("7. Visualizar gabarito oficial")
         print("8. Visualizar resultados pendentes no gabarito")
         print("9. Voltar ao menu principal \n")
-        opção = int(input("Digite a opção desejada: "))
+        
+        try:
+            opção = int(input("Digite a opção desejada: "))
+        except:
+            print("Digite um dígito válido!")
+            opção = int(input("Digite a opção desejada: "))
         
         if opção == 1:
             leitura = verificar_existencia("gabarito", "as seleções")
@@ -40,15 +49,18 @@ def consultar_dados():
             input("\nPressione ENTER para continuar...")
                     
         elif opção == 2:
-            fase = int(input("Digite a fase desejada (Ex: 1, 2,...,6): "))
-            if fase in [1, 2, 3, 4, 5, 6]:
-                leitura = verificar_existencia("gabarito", "as seleções")
-                if leitura == None:
-                    return               
-                mostrar_jogos("gabarito", "fase", fase)
-                       
-            else:
-                print("Fase inválida. Por favor, digite uma fase válida (1, 2,...,6).")
+            while True:
+                fase = input("Digite a fase desejada (Ex: 1, fase de 32, oitavas de finais, quartas de finais, semi finais, terceiro lugar, final):\n")
+                if fase in ["1", "fase de 32", "FASE DE 32", "oitavas de finais", "OITAVAS DE FINAIS", "quartas de finais", "QUARTAS DE FINAIS", "semi finais", "SEMI FINAIS", "terceiro lugar", "TERCEIRO LUGAR", "final", "FINAL"]:
+                    leitura = verificar_existencia("gabarito", "as seleções")
+                    if leitura == None:
+                        return       
+                    if fase == "1":
+                        fase = 1
+                    mostrar_jogos("gabarito", "fase", fase)
+                    break
+                else:
+                    print("Fase inválida. Por favor, digite uma fase válida.")
         
         elif opção == 3:
             grupo = input("Digite o grupo desejado (Ex: A, B,..., L): ")
@@ -60,7 +72,7 @@ def consultar_dados():
                 
             else:
                 print("Grupo inválido. Por favor, digite um grupo válido (A, B,..., L).")
-                sleep(5)
+                input("Pressione ENTER para continuar...")
         
         elif opção == 4:
             id = int(input("Digite o ID do jogo desejado: "))

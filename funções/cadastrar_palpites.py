@@ -1,12 +1,17 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
 from time import sleep
 from funções.limpar import limpar
 from funções.consultar_dados.verificar_existencia import verificar_existencia
 
 
-"""Cadastra os palpites de um apostador de acordo com as partidas existentes no gabarito. Permite listar todos os jogos, listar apenas jogos sem palpite, 
-   cadastrar ou alterar o placar de um jogo e voltar ao menu principal. Além disso, verifica se as seleções já estão carregadas."""
 def cadastrar_palpites():
+    """Cadastra os palpites de um apostador de acordo com as partidas existentes no gabarito. Permite listar todos os jogos, listar apenas jogos sem palpite, 
+    cadastrar ou alterar o placar de um jogo e voltar ao menu principal. Além disso, verifica se as seleções já estão carregadas."""
+    
     #verifica a existência do gabarito
     partidas = verificar_existencia("gabarito","as seleções")
     if partidas == None:

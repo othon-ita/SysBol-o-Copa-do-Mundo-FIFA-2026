@@ -1,7 +1,12 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
 
-"""Mostra os palpites de um apostador, podendo exibir todos os palpites ou apenas os que estão ausentes."""
 def mostrar_palpites(caminho, tipo):
+    """Mostra os palpites de um apostador, podendo exibir todos os palpites ou apenas os que estão ausentes."""
+    
     with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
         leitura = json.load(arquivo)
     

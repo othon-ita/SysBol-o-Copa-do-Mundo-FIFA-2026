@@ -1,10 +1,14 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
 import random
 from funções.auxiliar import decisao
 from funções.segunda_fase.fase_de_32.gerar_fase_32 import gerar_fase32
 
 def eliminatorias():
-    '''''Realiza o confronto de cada partida desde a fase 32 até a final, depois do confronto são definido os próximo jogos
+    '''Realiza o confronto de cada partida desde a fase 32 até a final, depois do confronto são definido os próximo jogos
      e adicionado no arquivo de palpites do apostador'''
     ordem_chaveamento = []
     partidas = []

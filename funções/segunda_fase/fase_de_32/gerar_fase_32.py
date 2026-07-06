@@ -1,3 +1,7 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 from funções.segunda_fase.fase_de_32.gerar_tabela_pontos_fase1 import gerar_tabela_pontos_fase1
 from funções.segunda_fase.fase_de_32.classificacao_fase_1 import classificacao_fase1
 from funções.segunda_fase.fase_de_32.partidas_fase32 import partidas_fase32

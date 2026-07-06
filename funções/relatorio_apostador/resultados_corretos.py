@@ -1,8 +1,13 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
-"""A função resultados_corretos(nome) retorna as informações do relatório referentes aos palpites em que o apostador errou o placar do jogo porém acertou seu resultado, ou seja, informou correntamente a seleção que venceu e a que perdeu. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
 def resultados_corretos(nome):
+    """A função resultados_corretos(nome) retorna as informações do relatório referentes aos palpites em que o apostador errou o placar do jogo porém acertou seu resultado, ou seja, informou correntamente a seleção que venceu e a que perdeu. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
+    
     relatorio = ""
     pontos = pontuação_apostador(nome)
     resultado_correto = pontos[nome]['resultado_correto']

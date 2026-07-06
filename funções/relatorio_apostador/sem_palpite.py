@@ -1,8 +1,13 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 import json
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
-"""A função sem_palpite(nome) retorna as informações do relatório referentes aos jogos em que o apostador não palpitou sobre. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
 def sem_palpite(nome):
+    """A função sem_palpite(nome) retorna as informações do relatório referentes aos jogos em que o apostador não palpitou sobre. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
+    
     relatorio = ""
     pontos = pontuação_apostador(nome)
     sem_palpite = pontos[nome]['sem_palpite']
