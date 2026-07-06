@@ -8,7 +8,7 @@ def gerar_tabela_pontos_fase1(nome_arquivo):
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
         partidas = json.load(arquivo)
         for partida in partidas:
-            if (partida.get('gols1')) < 0 or (partida.get('gols2') < 0)  :
+            if (partida.get('gols1')) <= 0 or (partida.get('gols2') <= 0)  :
                 input('Desculpe, mas você ainda não deu os seus palpites!\nPressione ENTER para continuar...')
                 return None
             elif (partida.get('selecao1') == '') or (partida.get('selecao2') == '') :
