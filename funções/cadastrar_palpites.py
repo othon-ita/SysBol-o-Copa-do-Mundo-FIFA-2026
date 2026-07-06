@@ -83,7 +83,12 @@ Digite a opção desejada: '''))
                         print(f"{i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
                         
                         gols1 = int(input(f"\nDigite o número de gols do(a) {i.get('selecao1')}: "))
+                        while gols1 < 0:
+                            gols1 = int(input(f"\nDigite um número de gols válido!: "))
+
                         gols2 = int(input(f"Digite o número de gols do(a) {i.get('selecao2')}: "))
+                        while gols2 < 0:
+                            gols2 = int(input(f"\nDigite um número de gols válido!: "))
 
                         print("\nPalpite cadastrado com sucesso!")
                         
