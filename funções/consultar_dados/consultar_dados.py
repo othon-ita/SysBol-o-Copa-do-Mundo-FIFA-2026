@@ -18,7 +18,12 @@ def consultar_dados():
         print("7. Visualizar gabarito oficial")
         print("8. Visualizar resultados pendentes no gabarito")
         print("9. Voltar ao menu principal \n")
-        opção = int(input("Digite a opção desejada: "))
+        
+        try:
+            opção = int(input("Digite a opção desejada: "))
+        except:
+            print("Digite um dígito válido!")
+            opção = int(input("Digite a opção desejada: "))
         
         if opção == 1:
             leitura = verificar_existencia("gabarito", "as seleções")
@@ -39,15 +44,18 @@ def consultar_dados():
             input("\nPressione ENTER para continuar...")
                     
         elif opção == 2:
-            fase = int(input("Digite a fase desejada (Ex: 1, 2,...,6): "))
-            if fase in [1, 2, 3, 4, 5, 6]:
-                leitura = verificar_existencia("gabarito", "as seleções")
-                if leitura == None:
-                    return               
-                mostrar_jogos("gabarito", "fase", fase)
-                       
-            else:
-                print("Fase inválida. Por favor, digite uma fase válida (1, 2,...,6).")
+            while True:
+                fase = input("Digite a fase desejada (Ex: 1, fase de 32, oitavas de finais, quartas de finais, semi finais, terceiro lugar, final):\n")
+                if fase in ["1", "fase de 32", "FASE DE 32", "oitavas de finais", "OITAVAS DE FINAIS", "quartas de finais", "QUARTAS DE FINAIS", "semi finais", "SEMI FINAIS", "terceiro lugar", "TERCEIRO LUGAR", "final", "FINAL"]:
+                    leitura = verificar_existencia("gabarito", "as seleções")
+                    if leitura == None:
+                        return       
+                    if fase == "1":
+                        fase = 1
+                    mostrar_jogos("gabarito", "fase", fase)
+                    break
+                else:
+                    print("Fase inválida. Por favor, digite uma fase válida.")
         
         elif opção == 3:
             grupo = input("Digite o grupo desejado (Ex: A, B,..., L): ")

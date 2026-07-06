@@ -7,18 +7,16 @@ def mostrar_jogos(caminho, filtro, valor):
         print(f"\nJogos:")
         for i in leitura:
             try:
-                if i.get(f'{filtro}') == valor:
+                if (i.get(f'{filtro}') == valor) and i.get('grupo') != None:
                     print(f"\nID: {i.get('id')}")
                     print(f"Fase: {i.get('fase')}")
                     print(f"Grupo: {i.get('grupo')}")
                     print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                elif i.get(f'{filtro}') == valor:
+                    print(f"\nID: {i.get('id')}")
+                    print(f"Fase: {i.get('fase')}")
+                    print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
             except:
-                try:
-                    if i.get(f'{filtro}') == valor:
-                        print(f"\nID: {i.get('id')}")
-                        print(f"Fase: {i.get('fase')}")
-                        print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-                except:
-                    continue
+                continue
             
     input("\nPressione ENTER para continuar...")
