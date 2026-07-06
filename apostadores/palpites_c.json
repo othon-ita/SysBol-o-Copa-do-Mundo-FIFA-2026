@@ -1,0 +1,906 @@
+[
+    {
+        "id": 1,
+        "fase": 1,
+        "grupo": "A",
+        "selecao1": "M\u00e9xico",
+        "selecao2": "\u00c1frica do Sul",
+        "gols1": 5,
+        "gols2": 6
+    },
+    {
+        "id": 2,
+        "fase": 1,
+        "grupo": "A",
+        "selecao1": "M\u00e9xico",
+        "selecao2": "Coreia do Sul",
+        "gols1": 5,
+        "gols2": 3
+    },
+    {
+        "id": 3,
+        "fase": 1,
+        "grupo": "A",
+        "selecao1": "M\u00e9xico",
+        "selecao2": "Tch\u00e9quia",
+        "gols1": 6,
+        "gols2": 0
+    },
+    {
+        "id": 4,
+        "fase": 1,
+        "grupo": "A",
+        "selecao1": "\u00c1frica do Sul",
+        "selecao2": "Coreia do Sul",
+        "gols1": 7,
+        "gols2": 1
+    },
+    {
+        "id": 5,
+        "fase": 1,
+        "grupo": "A",
+        "selecao1": "\u00c1frica do Sul",
+        "selecao2": "Tch\u00e9quia",
+        "gols1": 3,
+        "gols2": 2
+    },
+    {
+        "id": 6,
+        "fase": 1,
+        "grupo": "A",
+        "selecao1": "Coreia do Sul",
+        "selecao2": "Tch\u00e9quia",
+        "gols1": 7,
+        "gols2": 0
+    },
+    {
+        "id": 7,
+        "fase": 1,
+        "grupo": "B",
+        "selecao1": "Canad\u00e1",
+        "selecao2": "B\u00f3snia",
+        "gols1": 7,
+        "gols2": 0
+    },
+    {
+        "id": 8,
+        "fase": 1,
+        "grupo": "B",
+        "selecao1": "Canad\u00e1",
+        "selecao2": "Catar",
+        "gols1": 2,
+        "gols2": 3
+    },
+    {
+        "id": 9,
+        "fase": 1,
+        "grupo": "B",
+        "selecao1": "Canad\u00e1",
+        "selecao2": "Su\u00ed\u00e7a",
+        "gols1": 4,
+        "gols2": 2
+    },
+    {
+        "id": 10,
+        "fase": 1,
+        "grupo": "B",
+        "selecao1": "B\u00f3snia",
+        "selecao2": "Catar",
+        "gols1": 5,
+        "gols2": 7
+    },
+    {
+        "id": 11,
+        "fase": 1,
+        "grupo": "B",
+        "selecao1": "B\u00f3snia",
+        "selecao2": "Su\u00ed\u00e7a",
+        "gols1": 0,
+        "gols2": 4
+    },
+    {
+        "id": 12,
+        "fase": 1,
+        "grupo": "B",
+        "selecao1": "Catar",
+        "selecao2": "Su\u00ed\u00e7a",
+        "gols1": 2,
+        "gols2": 2
+    },
+    {
+        "id": 13,
+        "fase": 1,
+        "grupo": "C",
+        "selecao1": "Brasil",
+        "selecao2": "Marrocos",
+        "gols1": 6,
+        "gols2": 2
+    },
+    {
+        "id": 14,
+        "fase": 1,
+        "grupo": "C",
+        "selecao1": "Brasil",
+        "selecao2": "Haiti",
+        "gols1": 4,
+        "gols2": 1
+    },
+    {
+        "id": 15,
+        "fase": 1,
+        "grupo": "C",
+        "selecao1": "Brasil",
+        "selecao2": "Esc\u00f3cia",
+        "gols1": 7,
+        "gols2": 1
+    },
+    {
+        "id": 16,
+        "fase": 1,
+        "grupo": "C",
+        "selecao1": "Marrocos",
+        "selecao2": "Haiti",
+        "gols1": 1,
+        "gols2": 6
+    },
+    {
+        "id": 17,
+        "fase": 1,
+        "grupo": "C",
+        "selecao1": "Marrocos",
+        "selecao2": "Esc\u00f3cia",
+        "gols1": 0,
+        "gols2": 4
+    },
+    {
+        "id": 18,
+        "fase": 1,
+        "grupo": "C",
+        "selecao1": "Haiti",
+        "selecao2": "Esc\u00f3cia",
+        "gols1": 4,
+        "gols2": 3
+    },
+    {
+        "id": 19,
+        "fase": 1,
+        "grupo": "D",
+        "selecao1": "Estados Unidos",
+        "selecao2": "Paraguai",
+        "gols1": 2,
+        "gols2": 1
+    },
+    {
+        "id": 20,
+        "fase": 1,
+        "grupo": "D",
+        "selecao1": "Estados Unidos",
+        "selecao2": "Austr\u00e1lia",
+        "gols1": 1,
+        "gols2": 6
+    },
+    {
+        "id": 21,
+        "fase": 1,
+        "grupo": "D",
+        "selecao1": "Estados Unidos",
+        "selecao2": "Turquia",
+        "gols1": 6,
+        "gols2": 4
+    },
+    {
+        "id": 22,
+        "fase": 1,
+        "grupo": "D",
+        "selecao1": "Paraguai",
+        "selecao2": "Austr\u00e1lia",
+        "gols1": 5,
+        "gols2": 5
+    },
+    {
+        "id": 23,
+        "fase": 1,
+        "grupo": "D",
+        "selecao1": "Paraguai",
+        "selecao2": "Turquia",
+        "gols1": 3,
+        "gols2": 7
+    },
+    {
+        "id": 24,
+        "fase": 1,
+        "grupo": "D",
+        "selecao1": "Austr\u00e1lia",
+        "selecao2": "Turquia",
+        "gols1": 5,
+        "gols2": 6
+    },
+    {
+        "id": 25,
+        "fase": 1,
+        "grupo": "E",
+        "selecao1": "Alemanha",
+        "selecao2": "Cura\u00e7ao",
+        "gols1": 0,
+        "gols2": 4
+    },
+    {
+        "id": 26,
+        "fase": 1,
+        "grupo": "E",
+        "selecao1": "Alemanha",
+        "selecao2": "Costa do Marfim",
+        "gols1": 7,
+        "gols2": 7
+    },
+    {
+        "id": 27,
+        "fase": 1,
+        "grupo": "E",
+        "selecao1": "Alemanha",
+        "selecao2": "Equador",
+        "gols1": 2,
+        "gols2": 4
+    },
+    {
+        "id": 28,
+        "fase": 1,
+        "grupo": "E",
+        "selecao1": "Cura\u00e7ao",
+        "selecao2": "Costa do Marfim",
+        "gols1": 0,
+        "gols2": 5
+    },
+    {
+        "id": 29,
+        "fase": 1,
+        "grupo": "E",
+        "selecao1": "Cura\u00e7ao",
+        "selecao2": "Equador",
+        "gols1": 6,
+        "gols2": 7
+    },
+    {
+        "id": 30,
+        "fase": 1,
+        "grupo": "E",
+        "selecao1": "Costa do Marfim",
+        "selecao2": "Equador",
+        "gols1": 1,
+        "gols2": 5
+    },
+    {
+        "id": 31,
+        "fase": 1,
+        "grupo": "F",
+        "selecao1": "Holanda",
+        "selecao2": "Jap\u00e3o",
+        "gols1": 5,
+        "gols2": 1
+    },
+    {
+        "id": 32,
+        "fase": 1,
+        "grupo": "F",
+        "selecao1": "Holanda",
+        "selecao2": "Su\u00e9cia",
+        "gols1": 1,
+        "gols2": 1
+    },
+    {
+        "id": 33,
+        "fase": 1,
+        "grupo": "F",
+        "selecao1": "Holanda",
+        "selecao2": "Tun\u00edsia",
+        "gols1": 7,
+        "gols2": 5
+    },
+    {
+        "id": 34,
+        "fase": 1,
+        "grupo": "F",
+        "selecao1": "Jap\u00e3o",
+        "selecao2": "Su\u00e9cia",
+        "gols1": 7,
+        "gols2": 7
+    },
+    {
+        "id": 35,
+        "fase": 1,
+        "grupo": "F",
+        "selecao1": "Jap\u00e3o",
+        "selecao2": "Tun\u00edsia",
+        "gols1": 0,
+        "gols2": 1
+    },
+    {
+        "id": 36,
+        "fase": 1,
+        "grupo": "F",
+        "selecao1": "Su\u00e9cia",
+        "selecao2": "Tun\u00edsia",
+        "gols1": 3,
+        "gols2": 1
+    },
+    {
+        "id": 37,
+        "fase": 1,
+        "grupo": "G",
+        "selecao1": "B\u00e9lgica",
+        "selecao2": "Egito",
+        "gols1": 0,
+        "gols2": 4
+    },
+    {
+        "id": 38,
+        "fase": 1,
+        "grupo": "G",
+        "selecao1": "B\u00e9lgica",
+        "selecao2": "Ir\u00e3",
+        "gols1": 1,
+        "gols2": 1
+    },
+    {
+        "id": 39,
+        "fase": 1,
+        "grupo": "G",
+        "selecao1": "B\u00e9lgica",
+        "selecao2": "Nova Zel\u00e2ndia",
+        "gols1": 2,
+        "gols2": 7
+    },
+    {
+        "id": 40,
+        "fase": 1,
+        "grupo": "G",
+        "selecao1": "Egito",
+        "selecao2": "Ir\u00e3",
+        "gols1": 6,
+        "gols2": 5
+    },
+    {
+        "id": 41,
+        "fase": 1,
+        "grupo": "G",
+        "selecao1": "Egito",
+        "selecao2": "Nova Zel\u00e2ndia",
+        "gols1": 5,
+        "gols2": 7
+    },
+    {
+        "id": 42,
+        "fase": 1,
+        "grupo": "G",
+        "selecao1": "Ir\u00e3",
+        "selecao2": "Nova Zel\u00e2ndia",
+        "gols1": 0,
+        "gols2": 1
+    },
+    {
+        "id": 43,
+        "fase": 1,
+        "grupo": "H",
+        "selecao1": "Espanha",
+        "selecao2": "Cabo Verde",
+        "gols1": 3,
+        "gols2": 4
+    },
+    {
+        "id": 44,
+        "fase": 1,
+        "grupo": "H",
+        "selecao1": "Espanha",
+        "selecao2": "Ar\u00e1bia Saudita",
+        "gols1": 6,
+        "gols2": 2
+    },
+    {
+        "id": 45,
+        "fase": 1,
+        "grupo": "H",
+        "selecao1": "Espanha",
+        "selecao2": "Uruguai",
+        "gols1": 5,
+        "gols2": 1
+    },
+    {
+        "id": 46,
+        "fase": 1,
+        "grupo": "H",
+        "selecao1": "Cabo Verde",
+        "selecao2": "Ar\u00e1bia Saudita",
+        "gols1": 7,
+        "gols2": 7
+    },
+    {
+        "id": 47,
+        "fase": 1,
+        "grupo": "H",
+        "selecao1": "Cabo Verde",
+        "selecao2": "Uruguai",
+        "gols1": 3,
+        "gols2": 6
+    },
+    {
+        "id": 48,
+        "fase": 1,
+        "grupo": "H",
+        "selecao1": "Ar\u00e1bia Saudita",
+        "selecao2": "Uruguai",
+        "gols1": 4,
+        "gols2": 5
+    },
+    {
+        "id": 49,
+        "fase": 1,
+        "grupo": "I",
+        "selecao1": "Fran\u00e7a",
+        "selecao2": "Senegal",
+        "gols1": 4,
+        "gols2": 7
+    },
+    {
+        "id": 50,
+        "fase": 1,
+        "grupo": "I",
+        "selecao1": "Fran\u00e7a",
+        "selecao2": "Iraque",
+        "gols1": 4,
+        "gols2": 6
+    },
+    {
+        "id": 51,
+        "fase": 1,
+        "grupo": "I",
+        "selecao1": "Fran\u00e7a",
+        "selecao2": "Noruega",
+        "gols1": 0,
+        "gols2": 7
+    },
+    {
+        "id": 52,
+        "fase": 1,
+        "grupo": "I",
+        "selecao1": "Senegal",
+        "selecao2": "Iraque",
+        "gols1": 1,
+        "gols2": 6
+    },
+    {
+        "id": 53,
+        "fase": 1,
+        "grupo": "I",
+        "selecao1": "Senegal",
+        "selecao2": "Noruega",
+        "gols1": 2,
+        "gols2": 6
+    },
+    {
+        "id": 54,
+        "fase": 1,
+        "grupo": "I",
+        "selecao1": "Iraque",
+        "selecao2": "Noruega",
+        "gols1": 7,
+        "gols2": 1
+    },
+    {
+        "id": 55,
+        "fase": 1,
+        "grupo": "J",
+        "selecao1": "Argentina",
+        "selecao2": "Arg\u00e9lia",
+        "gols1": 2,
+        "gols2": 2
+    },
+    {
+        "id": 56,
+        "fase": 1,
+        "grupo": "J",
+        "selecao1": "Argentina",
+        "selecao2": "\u00c1ustria",
+        "gols1": 0,
+        "gols2": 2
+    },
+    {
+        "id": 57,
+        "fase": 1,
+        "grupo": "J",
+        "selecao1": "Argentina",
+        "selecao2": "Jord\u00e2nia",
+        "gols1": 0,
+        "gols2": 5
+    },
+    {
+        "id": 58,
+        "fase": 1,
+        "grupo": "J",
+        "selecao1": "Arg\u00e9lia",
+        "selecao2": "\u00c1ustria",
+        "gols1": 3,
+        "gols2": 6
+    },
+    {
+        "id": 59,
+        "fase": 1,
+        "grupo": "J",
+        "selecao1": "Arg\u00e9lia",
+        "selecao2": "Jord\u00e2nia",
+        "gols1": 4,
+        "gols2": 1
+    },
+    {
+        "id": 60,
+        "fase": 1,
+        "grupo": "J",
+        "selecao1": "\u00c1ustria",
+        "selecao2": "Jord\u00e2nia",
+        "gols1": 7,
+        "gols2": 7
+    },
+    {
+        "id": 61,
+        "fase": 1,
+        "grupo": "K",
+        "selecao1": "Portugal",
+        "selecao2": "RD Congo",
+        "gols1": 1,
+        "gols2": 3
+    },
+    {
+        "id": 62,
+        "fase": 1,
+        "grupo": "K",
+        "selecao1": "Portugal",
+        "selecao2": "Uzbequist\u00e3o",
+        "gols1": 7,
+        "gols2": 3
+    },
+    {
+        "id": 63,
+        "fase": 1,
+        "grupo": "K",
+        "selecao1": "Portugal",
+        "selecao2": "Col\u00f4mbia",
+        "gols1": 2,
+        "gols2": 2
+    },
+    {
+        "id": 64,
+        "fase": 1,
+        "grupo": "K",
+        "selecao1": "RD Congo",
+        "selecao2": "Uzbequist\u00e3o",
+        "gols1": 1,
+        "gols2": 5
+    },
+    {
+        "id": 65,
+        "fase": 1,
+        "grupo": "K",
+        "selecao1": "RD Congo",
+        "selecao2": "Col\u00f4mbia",
+        "gols1": 7,
+        "gols2": 6
+    },
+    {
+        "id": 66,
+        "fase": 1,
+        "grupo": "K",
+        "selecao1": "Uzbequist\u00e3o",
+        "selecao2": "Col\u00f4mbia",
+        "gols1": 2,
+        "gols2": 0
+    },
+    {
+        "id": 67,
+        "fase": 1,
+        "grupo": "L",
+        "selecao1": "Inglaterra",
+        "selecao2": "Cro\u00e1cia",
+        "gols1": 3,
+        "gols2": 6
+    },
+    {
+        "id": 68,
+        "fase": 1,
+        "grupo": "L",
+        "selecao1": "Inglaterra",
+        "selecao2": "Gana",
+        "gols1": 2,
+        "gols2": 5
+    },
+    {
+        "id": 69,
+        "fase": 1,
+        "grupo": "L",
+        "selecao1": "Inglaterra",
+        "selecao2": "Panam\u00e1",
+        "gols1": 3,
+        "gols2": 3
+    },
+    {
+        "id": 70,
+        "fase": 1,
+        "grupo": "L",
+        "selecao1": "Cro\u00e1cia",
+        "selecao2": "Gana",
+        "gols1": 5,
+        "gols2": 7
+    },
+    {
+        "id": 71,
+        "fase": 1,
+        "grupo": "L",
+        "selecao1": "Cro\u00e1cia",
+        "selecao2": "Panam\u00e1",
+        "gols1": 3,
+        "gols2": 6
+    },
+    {
+        "id": 72,
+        "fase": 1,
+        "grupo": "L",
+        "selecao1": "Gana",
+        "selecao2": "Panam\u00e1",
+        "gols1": 1,
+        "gols2": 2
+    },
+    {
+        "id": 73,
+        "fase": "fase de 32",
+        "selecao1": "Iraque",
+        "selecao2": "Cura\u00e7ao",
+        "gols1": 6,
+        "gols2": 1
+    },
+    {
+        "id": 74,
+        "fase": "fase de 32",
+        "selecao1": "Brasil",
+        "selecao2": "Cro\u00e1cia",
+        "gols1": 2,
+        "gols2": 4
+    },
+    {
+        "id": 75,
+        "fase": "fase de 32",
+        "selecao1": "\u00c1frica do Sul",
+        "selecao2": "Coreia do Sul",
+        "gols1": 1,
+        "gols2": 7
+    },
+    {
+        "id": 76,
+        "fase": "fase de 32",
+        "selecao1": "Nova Zel\u00e2ndia",
+        "selecao2": "Cabo Verde",
+        "gols1": 4,
+        "gols2": 5
+    },
+    {
+        "id": 77,
+        "fase": "fase de 32",
+        "selecao1": "Equador",
+        "selecao2": "Arg\u00e9lia",
+        "gols1": 6,
+        "gols2": 3
+    },
+    {
+        "id": 78,
+        "fase": "fase de 32",
+        "selecao1": "Holanda",
+        "selecao2": "Costa do Marfim",
+        "gols1": 2,
+        "gols2": 1
+    },
+    {
+        "id": 79,
+        "fase": "fase de 32",
+        "selecao1": "\u00c1ustria",
+        "selecao2": "Su\u00ed\u00e7a",
+        "gols1": 6,
+        "gols2": 2
+    },
+    {
+        "id": 80,
+        "fase": "fase de 32",
+        "selecao1": "Panam\u00e1",
+        "selecao2": "Portugal",
+        "gols1": 5,
+        "gols2": 6
+    },
+    {
+        "id": 81,
+        "fase": "fase de 32",
+        "selecao1": "Catar",
+        "selecao2": "Jord\u00e2nia",
+        "gols1": 6,
+        "gols2": 2
+    },
+    {
+        "id": 82,
+        "fase": "fase de 32",
+        "selecao1": "Canad\u00e1",
+        "selecao2": "Austr\u00e1lia",
+        "gols1": 6,
+        "gols2": 7
+    },
+    {
+        "id": 83,
+        "fase": "fase de 32",
+        "selecao1": "M\u00e9xico",
+        "selecao2": "Su\u00e9cia",
+        "gols1": 6,
+        "gols2": 7
+    },
+    {
+        "id": 84,
+        "fase": "fase de 32",
+        "selecao1": "Espanha",
+        "selecao2": "Estados Unidos",
+        "gols1": 1,
+        "gols2": 5
+    },
+    {
+        "id": 85,
+        "fase": "fase de 32",
+        "selecao1": "Noruega",
+        "selecao2": "RD Congo",
+        "gols1": 4,
+        "gols2": 7
+    },
+    {
+        "id": 86,
+        "fase": "fase de 32",
+        "selecao1": "Gana",
+        "selecao2": "Uruguai",
+        "gols1": 2,
+        "gols2": 3
+    },
+    {
+        "id": 87,
+        "fase": "fase de 32",
+        "selecao1": "Turquia",
+        "selecao2": "Uzbequist\u00e3o",
+        "gols1": 3,
+        "gols2": 6
+    },
+    {
+        "id": 88,
+        "fase": "fase de 32",
+        "selecao1": "Egito",
+        "selecao2": "Haiti",
+        "gols1": 6,
+        "gols2": 3
+    },
+    {
+        "id": 89,
+        "fase": "oitavas de finais",
+        "selecao1": "Iraque",
+        "selecao2": "Cabo Verde",
+        "gols1": 3,
+        "gols2": 4
+    },
+    {
+        "id": 90,
+        "fase": "oitavas de finais",
+        "selecao1": "Egito",
+        "selecao2": "Cro\u00e1cia",
+        "gols1": 1,
+        "gols2": 0
+    },
+    {
+        "id": 91,
+        "fase": "oitavas de finais",
+        "selecao1": "Coreia do Sul",
+        "selecao2": "Equador",
+        "gols1": 1,
+        "gols2": 4
+    },
+    {
+        "id": 92,
+        "fase": "oitavas de finais",
+        "selecao1": "Holanda",
+        "selecao2": "\u00c1ustria",
+        "gols1": 6,
+        "gols2": 7
+    },
+    {
+        "id": 93,
+        "fase": "oitavas de finais",
+        "selecao1": "Austr\u00e1lia",
+        "selecao2": "Su\u00e9cia",
+        "gols1": 4,
+        "gols2": 6
+    },
+    {
+        "id": 94,
+        "fase": "oitavas de finais",
+        "selecao1": "Portugal",
+        "selecao2": "Catar",
+        "gols1": 5,
+        "gols2": 3
+    },
+    {
+        "id": 95,
+        "fase": "oitavas de finais",
+        "selecao1": "RD Congo",
+        "selecao2": "Uzbequist\u00e3o",
+        "gols1": 5,
+        "gols2": 3
+    },
+    {
+        "id": 96,
+        "fase": "oitavas de finais",
+        "selecao1": "Estados Unidos",
+        "selecao2": "Uruguai",
+        "gols1": 7,
+        "gols2": 6
+    },
+    {
+        "id": 97,
+        "fase": "quartas de finais",
+        "selecao1": "Cabo Verde",
+        "selecao2": "Egito",
+        "gols1": 1,
+        "gols2": 6
+    },
+    {
+        "id": 98,
+        "fase": "quartas de finais",
+        "selecao1": "Su\u00e9cia",
+        "selecao2": "Portugal",
+        "gols1": 3,
+        "gols2": 5
+    },
+    {
+        "id": 99,
+        "fase": "quartas de finais",
+        "selecao1": "Equador",
+        "selecao2": "\u00c1ustria",
+        "gols1": 3,
+        "gols2": 0
+    },
+    {
+        "id": 100,
+        "fase": "quartas de finais",
+        "selecao1": "RD Congo",
+        "selecao2": "Estados Unidos",
+        "gols1": 3,
+        "gols2": 0
+    },
+    {
+        "id": 101,
+        "fase": "semi finais",
+        "selecao1": "Egito",
+        "selecao2": "Portugal",
+        "gols1": 2,
+        "gols2": 7
+    },
+    {
+        "id": 102,
+        "fase": "semi finais",
+        "selecao1": "Equador",
+        "selecao2": "RD Congo",
+        "gols1": 1,
+        "gols2": 2
+    },
+    {
+        "id": 103,
+        "fase": "terceiro lugar",
+        "selecao1": "Egito",
+        "selecao2": "Equador",
+        "gols1": 6,
+        "gols2": 5
+    },
+    {
+        "id": 104,
+        "fase": "final",
+        "selecao1": "Portugal",
+        "selecao2": "RD Congo",
+        "gols1": 4,
+        "gols2": 3
+    }
+]
