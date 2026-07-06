@@ -36,7 +36,7 @@ def consultar_dados():
                     print(f"\nID: {i.get('id')}")
                     print(f"Fase: {i.get('fase')}")
                     print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-                    
+            input("Pressione ENTER para continuar")        
         elif opção == 2:
             fase = int(input("Digite a fase desejada (Ex: 1, 2,...,6): "))
             if fase in [1, 2, 3, 4, 5, 6]:
@@ -82,6 +82,9 @@ def consultar_dados():
             mostrar_palpites(f'./apostadores/palpites_{nome}', "sem palpites")
         
         elif opção == 7:
+            leitura = verificar_existencia ("gabarito", "as seleções")
+            if leitura == None:
+                return
             with open ("gabarito.json", 'r', encoding = 'utf-8') as arquivo:
                 leitura = json.load(arquivo)
                 
@@ -97,8 +100,15 @@ def consultar_dados():
                         print(f"\nID: {i.get('id')}")
                         print(f"Fase: {i.get('fase')}")
                         print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
+                else: 
+                    input('Desculpe, mas você ainda não deu os seus palpites completamente!\nPressione ENTER para continuar')
+                    break
         
         elif opção == 8:
+            leitura = verificar_existencia ("gabarito", "as seleções")
+            if leitura == None:
+
+                return
             with open ("gabarito.json", 'r', encoding = 'utf-8') as arquivo:
                 leitura = json.load(arquivo)
                 
@@ -114,6 +124,6 @@ def consultar_dados():
                         print(f"\nID: {i.get('id')}")
                         print(f"Fase: {i.get('fase')}")
                         print(f"Partida: {i.get('selecao1')} {i.get('gols1')} x {i.get('gols2')} {i.get('selecao2')}")
-        
+            input("Pressione ENTER para continuar")
         elif opção == 9:
             break

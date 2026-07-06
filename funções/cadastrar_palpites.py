@@ -30,6 +30,7 @@ def cadastrar_palpites():
                 json.dump(leitura, arquivo, indent = 4)
     except FileNotFoundError:
         input('Desculpe, mas você ainda não está cadastrado no sistema\n Pressione ENTER para continuar...')
+        return
     while True:
         limpar()
         print(8*"*", f"Palpites de {nome}", 8*"*")
