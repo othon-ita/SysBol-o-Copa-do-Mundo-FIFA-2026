@@ -1,5 +1,4 @@
 import json
-from time import sleep
 from funções.limpar import limpar
 from funções.consultar_dados.verificar_existencia import verificar_existencia
 from funções.consultar_dados.mostrar_palpites import mostrar_palpites
@@ -60,7 +59,7 @@ def consultar_dados():
                 
             else:
                 print("Grupo inválido. Por favor, digite um grupo válido (A, B,..., L).")
-                sleep(5)
+                input("Pressione ENTER para continuar...")
         
         elif opção == 4:
             id = int(input("Digite o ID do jogo desejado: "))
