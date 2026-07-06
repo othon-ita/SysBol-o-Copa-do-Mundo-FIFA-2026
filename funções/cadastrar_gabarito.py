@@ -25,18 +25,16 @@ def cadastrar_gabarito():
     elif len(partidas) == 102:
         fase_atual = "semi finais"
 
-    elif len(partidas) == 103:
-        fase_atual = "terceiro lugar"
-
-    elif len(partidas) == 104:
-        fase_atual = "final"
-        
 
     for partida in partidas:
         #se partida não for da fase atual, pula
-        if partida["fase"] != fase_atual:
-            continue
-        
+        if len(partidas) > 102:
+            if partida["fase"] != "final" and partida["fase"] != "terceiro lugar":
+                continue
+        else:
+            if partida["fase"] != fase_atual:
+                continue
+            
         #permite que altere ou cadastre os gols das seleçoes, na fase atual
         print(f"Id da partida: {partida['id']}   \nFase: {partida['fase']} \nPartida: {partida['selecao1']} x {partida['selecao2']}")
 
