@@ -1,3 +1,7 @@
+#Nome e matrícula dos integrantes do grupo
+#André Nicolas de Sousa Vieira - 605925
+#Maria Eduarda da Silva Alves - 604390
+#Othon Ítalo Nascimento de Moraes - 600006
 from funções.segunda_fase.fase_de_32.confronto_direto_fase1 import confronto_direto
 
 
