@@ -117,6 +117,7 @@ def consultar_dados():
                 else: 
                     input('Desculpe, mas você ainda não deu os seus palpites completamente!\nPressione ENTER para continuar')
                     break
+            input("\nPressione ENTER para continuar...")
         
         elif opção == 8:
             leitura = verificar_existencia ("gabarito", "as seleções")

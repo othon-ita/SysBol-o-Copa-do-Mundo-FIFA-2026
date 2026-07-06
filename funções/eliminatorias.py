@@ -159,6 +159,6 @@ def eliminatorias():
             json.dump(leitura, arquivo, indent = 4 )
         return partidas
     
-    except:
+    except FileNotFoundError:
         input('\nDesculpe, mas você ainda não está cadastrado no sistema\nPressione ENTER para continuar...')
         return
