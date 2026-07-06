@@ -7,6 +7,7 @@ from funções.consultar_dados.consultar_dados import consultar_dados
 from funções.eliminatorias import eliminatorias
 from funções.cadastrar_gabarito import cadastrar_gabarito
 from funções.relatorio_apostador.relatorio_apostador import relatorio_apostador
+from funções.resultado_final import resultado_final
 
 while True:
     limpar()
@@ -41,6 +42,8 @@ Digite a opção desejada: '''
         cadastrar_gabarito()
     elif escolha == 7:
         relatorio_apostador()
+    elif escolha == 8:
+        resultado_final()
     elif escolha == 9:
         consultar_dados()
     elif escolha == 10:
