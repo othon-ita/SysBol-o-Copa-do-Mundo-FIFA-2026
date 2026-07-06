@@ -1,4 +1,5 @@
 def decisao():
+    '''verifica se você está acessando para apostador ou gabarito'''
     escolha = input('''1. Apostador
 2. Gabarito
 
