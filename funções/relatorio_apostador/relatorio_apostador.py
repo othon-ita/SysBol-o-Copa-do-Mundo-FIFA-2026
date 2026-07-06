@@ -6,10 +6,11 @@ from funções.relatorio_apostador.resultados_corretos import resultados_correto
 from funções.relatorio_apostador.erros import erros
 from funções.relatorio_apostador.sem_palpite import sem_palpite
 
-"""Utilizando-se das funções importadas, a função relatorio_apostador() gera um relatório detalhado da pontuação de um apostador específico com base nos valores retornados pela tabela_pontuação, gerada pela função pontuação_apostador(). O relatório inclui informações sobre o nome do apostador, a quantidade de vezes que ele acertou placares exatos, placares parciais, resultados corretos, erros e palpites não realizados. 
-
-Além disso, a função calcula a pontuação final do apostador com base nos critérios de pontuação estabelecidos. Sendo assim, além de receber essas informações via terminal, o usuário também tem a opção de gravar o relatório em um arquivo "relatorio_{apostador}.txt", onde poderá visualizar depois mais claramente as informações."""
 def relatorio_apostador():
+    """Utilizando-se das funções importadas, a função relatorio_apostador() gera um relatório detalhado da pontuação de um apostador específico com base nos valores retornados pela tabela_pontuação, gerada pela função pontuação_apostador(). O relatório inclui informações sobre o nome do apostador, a quantidade de vezes que ele acertou placares exatos, placares parciais, resultados corretos, erros e palpites não realizados. 
+
+    Além disso, a função calcula a pontuação final do apostador com base nos critérios de pontuação estabelecidos. Sendo assim, além de receber essas informações via terminal, o usuário também tem a opção de gravar o relatório em um arquivo "relatorio_{apostador}.txt", onde poderá visualizar depois mais claramente as informações."""
+    
     while True:
         #Declaração do relatório em string e o valor do nome do apostador, que será utilizado para gerar o relatório
         relatorio = ""

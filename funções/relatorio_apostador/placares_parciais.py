@@ -1,8 +1,9 @@
 import json
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
-"""A função placares_parciais(nome) retorna as informações do relatório referentes aos palpites em que o apostador acertou parcialmente o resultado de uma partida, ou seja, acertou o placar de um dos tipos concorrentes. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
 def placares_parciais(nome):
+    """A função placares_parciais(nome) retorna as informações do relatório referentes aos palpites em que o apostador acertou parcialmente o resultado de uma partida, ou seja, acertou o placar de um dos tipos concorrentes. Além disso, a função imprime no terminal este mesmo trecho denotado anteriormente"""
+    
     relatorio = ""
     pontos = pontuação_apostador(nome)
     placar_parcial = pontos[nome]['placar_parcial']

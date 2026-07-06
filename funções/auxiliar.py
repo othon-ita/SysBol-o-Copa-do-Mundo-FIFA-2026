@@ -1,4 +1,5 @@
 def decisao():
+    """Função para escolher em qual opção o usuário deseja criar a próxima fase"""
     escolha = input('''1. Apostador
 2. Gabarito
 

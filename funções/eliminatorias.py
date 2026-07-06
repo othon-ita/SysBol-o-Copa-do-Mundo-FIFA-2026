@@ -4,7 +4,8 @@ from funções.auxiliar import decisao
 from funções.segunda_fase.fase_de_32.gerar_fase_32 import gerar_fase32
 
 def eliminatorias():
-
+    """Função responsável por gerar as próximas fase eliminatórias, tanto do gabarito oficial quanto de cada palpite dos apostadores"""
+    
     ordem_chaveamento = []
     partidas = []
     nome_arquivo = decisao()

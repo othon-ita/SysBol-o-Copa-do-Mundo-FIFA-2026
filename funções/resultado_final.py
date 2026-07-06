@@ -2,10 +2,11 @@ import json
 from funções.limpar import limpar
 from funções.relatorio_apostador.pontuação_apostador import pontuação_apostador
 
-"""Função responsável por retornar o resultado final do bolão, ou seja, a classificação dos apostadores. Exibindo a pontuação de todos os registrados no arquivo "apostadores.txt, a função gera uma tabela que usar como ordenação o maior ao menor acúmulo de pontos por participante. Em caso de empates na pontuação, o sistema se baseia, em ordem decrescente, nos seguintes atributos: número de placares exatos, placares parciais e resultados corretos; além de usar, em ordem crescente, os atributos de número de erros e ordem alfabética.
-
-Por fim, a função resultado_final questiona se o usuário deseja a gravação do relatório em arquivo de texto, para visualização posterior."""
 def resultado_final():
+    """Função responsável por retornar o resultado final do bolão, ou seja, a classificação dos apostadores. Exibindo a pontuação de todos os registrados no arquivo "apostadores.txt, a função gera uma tabela que usar como ordenação o maior ao menor acúmulo de pontos por participante. Em caso de empates na pontuação, o sistema se baseia, em ordem decrescente, nos seguintes atributos: número de placares exatos, placares parciais e resultados corretos; além de usar, em ordem crescente, os atributos de número de erros e ordem alfabética.
+
+    Por fim, a função resultado_final questiona se o usuário deseja a gravação do relatório em arquivo de texto, para visualização posterior."""
+    
     try:
         #Aquisição dos apostadores registrados
         with open ('./apostadores/apostadores.txt', 'r', encoding = 'utf-8') as arquivo:

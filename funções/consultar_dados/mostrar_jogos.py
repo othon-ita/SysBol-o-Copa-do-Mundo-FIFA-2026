@@ -1,7 +1,8 @@
 import json
 
-"""Mostra todos os jogos de acordo com o filtro e valor fornecidos, exibindo informações como ID, fase, grupo e partida."""
 def mostrar_jogos(caminho, filtro, valor):
+    """Mostra todos os jogos de acordo com o filtro e valor fornecidos, exibindo informações como ID, fase, grupo e partida."""
+    
     with open (f'{caminho}.json', 'r', encoding = 'utf-8') as arquivo:
         leitura = json.load(arquivo)
         print(f"\nJogos:")

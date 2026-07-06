@@ -4,8 +4,9 @@ from funções.consultar_dados.verificar_existencia import verificar_existencia
 from funções.consultar_dados.mostrar_palpites import mostrar_palpites
 from funções.consultar_dados.mostrar_jogos import mostrar_jogos
 
-"""Submenu para a consulta de diferentes dados, permitindo ao usuário listar o calendário completo de jogos, jogos por fase, grupo, ID. Visualizar palpites pendentes, ou não, de um apostador, o gabarito oficial e os resultados pendentes no gabarito."""
 def consultar_dados():
+    """Submenu para a consulta de diferentes dados, permitindo ao usuário listar o calendário completo de jogos, jogos por fase, grupo, ID. Visualizar palpites pendentes, ou não, de um apostador, o gabarito oficial e os resultados pendentes no gabarito."""
+    
     while True:
         limpar()
         print(8*"*", "Consulta de Dados", 8*"*")

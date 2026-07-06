@@ -10,6 +10,8 @@ from funções.relatorio_apostador.relatorio_apostador import relatorio_apostado
 from funções.resultado_final import resultado_final
 
 while True:
+    """O arquivo 'main' é responsável por implementar o menu principal do sistema, permitindo ao usuário escolher entre diferentes opções, como; carregar as seleções, cadastrar apostadores, registrar palpites, completar palpites aleatoriamente, gerar a próxima fase, cadastrar gabarito, consultar pontuação de apostador, resultado final do bolão e consultar dados do sistema. O menu é exibido em um loop contínuo até que o usuário escolha a opção de sair."""
+    
     limpar()
     print ('MENU'.center(30, '='))
     escolha = int(input (
