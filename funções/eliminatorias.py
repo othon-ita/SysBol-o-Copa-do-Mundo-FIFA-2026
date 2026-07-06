@@ -50,7 +50,7 @@ def eliminatorias():
         gols2 = jogo.get("gols2")
         selecao1 = jogo.get("selecao1")
         selecao2 = jogo.get("selecao2")
-        if gols1 < 0 or gols2 < 0:
+        if gols1 <= 0 or gols2 <= 0:
             input('Desculpe, mas você ainda não deu os seus palpites!\nPressione ENTER para continuar')
             return
         elif selecao1 == '' or selecao2 == '':
