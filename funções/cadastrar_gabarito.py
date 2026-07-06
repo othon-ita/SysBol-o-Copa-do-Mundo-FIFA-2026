@@ -25,18 +25,15 @@ def cadastrar_gabarito():
     elif len(partidas) == 102:
         fase_atual = "semi finais"
 
-    elif len(partidas) == 103:
-        fase_atual = "terceiro lugar"
-
-    elif len(partidas) == 104:
-        fase_atual = "final"
-        
 
     for partida in partidas:
         #se partida não for da fase atual, pula
-        if partida["fase"] != fase_atual:
-            continue
-        
+        if len(partidas) > 102:
+            if partida["fase"] != "final" and partida["fase"] != "terceiro lugar":
+                continue
+        elif partida["fase"] != fase_atual:
+                continue
+            
         #permite que altere ou cadastre os gols das seleçoes, na fase atual
         print(f"Id da partida: {partida['id']}   \nFase: {partida['fase']} \nPartida: {partida['selecao1']} x {partida['selecao2']}")
 
@@ -49,8 +46,14 @@ def cadastrar_gabarito():
 
         print(f"Digite a quantidade de gols da primeira seleção: ({partida['selecao1']})")
         partida["gols1"] = int(input())
+        #impede o cadastro de um número de gols inválido
+        while partida["gols1"] < 0:
+            partida["gols1"] = int(input("Cadastre um número válido de gols: "))
+
         print(f"Digite a quantidade de gols da segunda seleção: ({partida['selecao2']})")
         partida["gols2"] = int(input())
+        while partida["gols2"] < 0:
+            partida["gols2"] = int(input("Cadastre um número válido de gols: "))
 
     with open("gabarito.json", "w", encoding="utf-8") as arquivo:
         json.dump(partidas, arquivo, indent=4, ensure_ascii=False)
